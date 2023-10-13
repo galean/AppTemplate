@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C72BBA802AD96F3D00AB1E87 /* CoreIntegrations in Frameworks */ = {isa = PBXBuildFile; productRef = C72BBA7F2AD96F3D00AB1E87 /* CoreIntegrations */; };
 		C72FB0B129A37F6300F8DEEF /* AppTemplateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72FB0B029A37F6300F8DEEF /* AppTemplateApp.swift */; };
 		C72FB0B329A37F6300F8DEEF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72FB0B229A37F6300F8DEEF /* ContentView.swift */; };
 		C72FB0B529A37F6500F8DEEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C72FB0B429A37F6500F8DEEF /* Assets.xcassets */; };
@@ -55,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C72BBA802AD96F3D00AB1E87 /* CoreIntegrations in Frameworks */,
 				C779D9752ACB0AD700EAABB1 /* CoreIntegrations in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -202,6 +204,7 @@
 			name = AppTemplate;
 			packageProductDependencies = (
 				C779D9742ACB0AD700EAABB1 /* CoreIntegrations */,
+				C72BBA7F2AD96F3D00AB1E87 /* CoreIntegrations */,
 			);
 			productName = AppTemplate;
 			productReference = C72FB0AD29A37F6300F8DEEF /* AppTemplate.app */;
@@ -232,6 +235,7 @@
 			);
 			mainGroup = C72FB0A429A37F6300F8DEEF;
 			packageReferences = (
+				C72BBA7E2AD96F3D00AB1E87 /* XCRemoteSwiftPackageReference "CoreIntegrations" */,
 			);
 			productRefGroup = C72FB0AE29A37F6300F8DEEF /* Products */;
 			projectDirPath = "";
@@ -491,7 +495,23 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		C72BBA7E2AD96F3D00AB1E87 /* XCRemoteSwiftPackageReference "CoreIntegrations" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/galean/CoreIntegrations";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
+		C72BBA7F2AD96F3D00AB1E87 /* CoreIntegrations */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C72BBA7E2AD96F3D00AB1E87 /* XCRemoteSwiftPackageReference "CoreIntegrations" */;
+			productName = CoreIntegrations;
+		};
 		C779D9712ACB0AD400EAABB1 /* CoreIntegrations */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = CoreIntegrations;
