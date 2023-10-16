@@ -13,6 +13,6 @@ struct AppCoreConfiguration: CoreConfigurationProtocol {
     var remoteConfigDataSource: any CoreRemoteDataSource = RemoteConfigDataSource()
     var amplitudeDataSource: any CoreAnalyticsDataSource = AnalyticsDataSource()
     var initialConfigurationDataSource: any ConfigurationEventsDataSource = AppConfigurationDataSource()
+    var attributionServerDataSource: any AttributionServerDataSource = AppAttributionDataSource()
     var useDefaultATTRequest = true
 }
-

@@ -16,6 +16,7 @@
 		C72FB0DF29A3A2DF00F8DEEF /* AppCoreSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72FB0DE29A3A2DF00F8DEEF /* AppCoreSettings.swift */; };
 		C72FB0E129A3BC1000F8DEEF /* UDStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72FB0E029A3BC1000F8DEEF /* UDStorage.swift */; };
 		C72FB0ED29A3CE7000F8DEEF /* SubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72FB0EC29A3CE7000F8DEEF /* SubscriptionManager.swift */; };
+		C75CFA9F2ADD33F2009D5B28 /* AppAttributionServerEnpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75CFA9E2ADD33F2009D5B28 /* AppAttributionServerEnpoints.swift */; };
 		C779D9752ACB0AD700EAABB1 /* CoreIntegrations in Frameworks */ = {isa = PBXBuildFile; productRef = C779D9742ACB0AD700EAABB1 /* CoreIntegrations */; };
 		C779D9772ACC197D00EAABB1 /* AppCoreConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779D9762ACC197D00EAABB1 /* AppCoreConfiguration.swift */; };
 		C779D9792ACC19B900EAABB1 /* AppAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779D9782ACC19B900EAABB1 /* AppAnalytics.swift */; };
@@ -39,6 +40,7 @@
 		C72FB0DE29A3A2DF00F8DEEF /* AppCoreSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoreSettings.swift; sourceTree = "<group>"; };
 		C72FB0E029A3BC1000F8DEEF /* UDStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDStorage.swift; sourceTree = "<group>"; };
 		C72FB0EC29A3CE7000F8DEEF /* SubscriptionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionManager.swift; sourceTree = "<group>"; };
+		C75CFA9E2ADD33F2009D5B28 /* AppAttributionServerEnpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAttributionServerEnpoints.swift; sourceTree = "<group>"; };
 		C779D9762ACC197D00EAABB1 /* AppCoreConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoreConfiguration.swift; sourceTree = "<group>"; };
 		C779D9782ACC19B900EAABB1 /* AppAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAnalytics.swift; sourceTree = "<group>"; };
 		C779D97A2ACC19E700EAABB1 /* AppRemoteConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRemoteConfig.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				C779D9762ACC197D00EAABB1 /* AppCoreConfiguration.swift */,
 				C7F2EB872AD88BE300D2BC00 /* AppConfigurationEvents.swift */,
 				C779D9782ACC19B900EAABB1 /* AppAnalytics.swift */,
+				C75CFA9E2ADD33F2009D5B28 /* AppAttributionServerEnpoints.swift */,
 				C779D97A2ACC19E700EAABB1 /* AppRemoteConfig.swift */,
 				C72FB0DE29A3A2DF00F8DEEF /* AppCoreSettings.swift */,
 			);
@@ -265,6 +268,7 @@
 			files = (
 				C79D96012A3C61010071C58E /* PaywallState.swift in Sources */,
 				C79D960B2A3C630A0071C58E /* LaunchView.swift in Sources */,
+				C75CFA9F2ADD33F2009D5B28 /* AppAttributionServerEnpoints.swift in Sources */,
 				C79D95FD2A3C60F10071C58E /* SubscriptionPriceManager.swift in Sources */,
 				C779D9772ACC197D00EAABB1 /* AppCoreConfiguration.swift in Sources */,
 				C72FB0BF29A3919000F8DEEF /* AppDelegate.swift in Sources */,
