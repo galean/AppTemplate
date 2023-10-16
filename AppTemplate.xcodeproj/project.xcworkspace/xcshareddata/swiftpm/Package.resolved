@@ -42,7 +42,7 @@
       "location" : "https://github.com/galean/CoreIntegrations",
       "state" : {
         "branch" : "mainRC",
-        "revision" : "b43932f08a7449157d7df776eab5abb7a7458f19"
+        "revision" : "33d186c05039ad5b882a365d04c717134a515b4a"
       }
     },
     {
@@ -50,8 +50,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/facebook/facebook-ios-sdk",
       "state" : {
-        "revision" : "de74c60d268f51fa1139f8e46e40710baf029f54",
-        "version" : "16.2.0"
+        "revision" : "ebfaa5eb867c9ad3e0b54ef8b03883f024cfc18a",
+        "version" : "16.2.1"
       }
     },
     {
