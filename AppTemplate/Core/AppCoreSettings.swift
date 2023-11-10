@@ -27,9 +27,6 @@ class AppSettings: CoreSettingsProtocol {
     @UDStorage(key: "launchCountKey", defaultValue: 0)
     var launchCount: Int
     
-//    @UDStorage(key: "cohortSent", defaultValue: false)
-//    var isCohortSent: Bool
-    
     @UDStorage(key: "subscriptionID", defaultValue: nil)
     var subscriptionID: String?
     

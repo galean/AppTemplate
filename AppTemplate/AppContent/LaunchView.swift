@@ -11,9 +11,9 @@ class LaunchViewModel: ObservableObject {
     @Published var showNextScreen: Bool = false
     
     func handleOnAppear() {
-        AppCoreManager.shared.configurationFinishCompletion = {
+//        AppCoreManager.shared.configurationFinishCompletion = {
             self.showNextScreen = true
-        }
+//        }
     }
 }
 

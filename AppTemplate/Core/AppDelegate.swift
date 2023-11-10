@@ -12,19 +12,19 @@ import AnalyticsIntegration
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        defaultConfiguration(application, didFinishLaunchingWithOptions: launchOptions)
+//        defaultConfiguration(application, didFinishLaunchingWithOptions: launchOptions)
         return true
     }
 
     func defaultConfiguration(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
-        CoreManager.shared.application(application,
-                                       didFinishLaunchingWithOptions: launchOptions,
-                                       coreCofiguration: AppCoreConfiguration(),
-                                       coreDelegate: AppCoreManager.shared)
+//        CoreManager.shared.application(application,
+//                                       didFinishLaunchingWithOptions: launchOptions,
+//                                       coreCofiguration: AppCoreConfiguration(),
+//                                       coreDelegate: AppCoreManager.shared)
     }
 
     func application( _ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:] ) -> Bool {
-        _ = CoreManager.shared.application(app, open: url, options: options)
+//        _ = CoreManager.shared.application(app, open: url, options: options)
         return true
     }
 

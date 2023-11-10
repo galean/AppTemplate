@@ -7,7 +7,6 @@
 
 import Foundation
 import CoreIntegrations
-//    associatedtype AppInitialConfigEvents: ConfigurationEvent
 
 struct AppConfigurationDataSource: ConfigurationEventsDataSource {
     typealias AppInitialConfigEvents = AppConfigurationEvents
@@ -15,15 +14,15 @@ struct AppConfigurationDataSource: ConfigurationEventsDataSource {
 
 enum AppConfigurationEvents: String, ConfigurationEvent {
     case someEvent = "someEvent"
-
+    
     var isFirstStartOnly: Bool {
         return true
     }
-
+    
     var isRequiredToContunue: Bool {
         return false
     }
-
+    
     var key: String {
         return rawValue
     }
