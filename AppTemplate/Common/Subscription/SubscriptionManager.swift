@@ -6,62 +6,54 @@
 //
 
 import Foundation
-//import TLMCoreManager
+import CoreIntegrations
 
-//final class SubscriptionManager {
-//    static let shared = SubscriptionManager()
-//    private init() { }
-//    
-//    func purchase(identifier: String, completion: @escaping (String?) -> Void) {
-//        TLMCoreManager.shared.purchase(identifier, quantity: 1, atomically: true) { result in
-//            switch result {
-//            case .success(let details):
-//                AppSettings.shared.subscriptionID = details.productId
-//                completion(nil)
-//            case .cancelled:
-//                completion("User cancelled payment")
-//            case .internetError:
-//                completion("Could not connect to the network")
-//            case .deferredPurchase:
-//                completion("Deferred Purchase")
-//            case .error(let skerror):
-//                var errorDescription: String
-//                switch skerror.code {
-//                case .unknown: errorDescription = "Unknown error. Please contact support"
-//                case .clientInvalid: errorDescription = "Not allowed to make the payment"
-//                case .paymentInvalid: errorDescription = "The purchase identifier was invalid"
-//                case .paymentNotAllowed: errorDescription = "The device is not allowed to make the payment"
-//                case .storeProductNotAvailable: errorDescription = "The product is not available in the current storefront"
-//                case .cloudServicePermissionDenied: errorDescription = "Access to cloud service information is not allowed"
-//                case .cloudServiceNetworkConnectionFailed: errorDescription = "Could not connect to the network"
-//                case .cloudServiceRevoked: errorDescription = "User has revoked permission to use this cloud service"
-//                case .paymentCancelled: errorDescription = "User cancelled payment"
-//                default: errorDescription = (skerror as NSError).localizedDescription
-//                }
-//
-//                completion(errorDescription)
-//            }
-//        }
-//    }
-//
-//    func verifyPremium(completion: @escaping (String?) -> Void) {
-//        let subscriptions: Set<String> = Set(SubscriptionType.allCases.map { $0.rawValue })
-//
-//        TLMCoreManager.shared.verifyPremium(premiumSubscriptionIds: subscriptions, premiumPurchaseIds: []) { result in
-//            switch result {
-//            case .premium(let receiptItem):
-//                AppSettings.shared.subscriptionID = receiptItem.productId
-//                completion(nil)
-//            case .notPremium:
-//                AppSettings.shared.subscriptionID = ""
-//                completion("Nothing to restore")
-//            case .internetError:
-//                completion("Could not connect to the network")
-//            case .error(let receiptError):
-//                let errorDescription = receiptError.localizedDescription
-//                completion(errorDescription)
-//                break
-//            }
-//        }
-//    }
-//}
+final class SubscriptionManager {
+    static let shared = SubscriptionManager()
+    private init() { }
+    
+    func subscriptions(for paywall: String, completion: @escaping ([Subscription]?) -> Void) {
+        CoreManager.shared.offerings { offerings in
+            guard let offering = offerings?[paywall] else {completion(nil); return}
+            var subscriptions:[Subscription]?
+            offering.availablePackages.forEach { package in
+                let product = package.storeProduct
+                
+                let isSubscription = product.productType == .autoRenewableSubscription || product.productType == .nonRenewableSubscription
+                
+                let subscription = Subscription(isSubscription: isSubscription, package: package, price: product.priceFloat, periodString: product.periodString, trialPrice: product.introPrice, trialPeriodstring: product.trialPeriodString, trialCount: product.trialCount, currencyCode: product.currencyCode ?? "", localisedPrice: package.localizedPriceString, localisedTrialPrice: package.localizedIntroductoryPriceString, type: SubscriptionType(rawValue: package.packageType.rawValue) ?? .unknown)
+                
+                subscriptions?.append(subscription)
+            }
+            completion(subscriptions)
+        }
+    }
+    
+    func purchase(subscription: Subscription, completion: @escaping (String?) -> Void) {
+        CoreManager.shared.purchase(subscription.package) { result in
+            switch result {
+            case .success(_):
+                completion(nil)
+            case .error(let error):
+                completion(error)
+            case .userCancelled:
+                completion("User cancelled payment")
+            }
+        }
+    }
+    
+    func verifyPremium(completion: @escaping (String?) -> Void) {
+        CoreManager.shared.verifyPremium { result in
+            switch result {
+            case .premium(_):
+                completion(nil)
+            case .notPremium:
+                completion("Nothing to restore")
+            case .error:
+                completion("Restore error")
+            }
+        }
+    }
+    
+}
+

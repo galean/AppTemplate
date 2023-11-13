@@ -7,33 +7,47 @@
 
 import SwiftUI
 
-struct Paywall_B: View {
+struct Paywall_B: View, PaywallProtocol {
     
     @Environment(\.dismiss) var dismiss
     
-    private let paywallID = "ct_vap_2"
+    @State var subscriptions: [Subscription] = []
+    let paywallID = "ct_vap_2"
     let screenSource: String
     let closeResult: PaywallResultClosure?
     
     var body: some View {
-        Button(action: {
-            dismiss()
-            closeResult?(.close)
-        }) {
-            Text("Close")
+        VStack{
+            Button(action: {
+                dismiss()
+                closeResult?(.close)
+            }) {
+                Text("Close")
+            }
+            
+            Spacer()
+            
+            Text("Hello, Paywall_B!")
+            /*
+            ForEach(subscriptions, id: \.self){ subscription in
+                Text("Subscribe for: \(subscription.localisedPrice)/\(subscription.periodString)")
+            }
+            */
+            Spacer()
+            
+            Button(action: {
+                dismiss()
+                closeResult?(.purchase)
+            }) {
+                Text("Subscribe")
+            }
         }
-        
-        Spacer()
-        
-        Text("Hello, Paywall_B!")
-        
-        Spacer()
-        
-        Button(action: {
-            dismiss()
-            closeResult?(.purchase)
-        }) {
-            Text("Subscribe")
+        .onAppear {
+            SubscriptionManager.shared.subscriptions(for: paywallID) { data in
+                if let data = data {
+                    self.subscriptions = data
+                }
+            }
         }
     }
 }

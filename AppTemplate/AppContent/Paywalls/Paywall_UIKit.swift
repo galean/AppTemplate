@@ -8,7 +8,7 @@
 import UIKit
 import SwiftUI
 
-class Paywall_UIKit: UIViewController {
+class Paywall_UIKit: UIViewController, PaywallProtocol {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -41,11 +41,20 @@ class Paywall_UIKit: UIViewController {
         return button
     }()
     
-    private let paywallID = "ct_vap_3"
+    var subscriptions: [Subscription] = []
+    
+    let paywallID = "ct_vap_3"
     var closeResult: PaywallResultClosure? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        SubscriptionManager.shared.subscriptions(for: paywallID) {[weak self] data in
+            if let data = data {
+                self?.subscriptions = data
+            }
+        }
+        
         setupViews()
     }
     
@@ -68,6 +77,13 @@ class Paywall_UIKit: UIViewController {
         subscribeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         subscribeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         subscribeButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        
+        /*
+         for subscription in subscriptions {
+             //"\(subscription.localisedPrice)/\(subscription.periodString)"
+         }
+        */
+        
     }
     
     @objc private func closeAction() {

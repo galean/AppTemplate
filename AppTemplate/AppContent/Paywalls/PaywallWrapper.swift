@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+public protocol PaywallProtocol {
+    var paywallID: String { get }
+}
+
 typealias PaywallResultClosure = ((PaywallCloseResult) -> Void)
 
 enum PaywallCloseResult {
