@@ -11,13 +11,16 @@ struct ContentView: View {
     
     @State var showPaywall = false
     @State var showOffer = false
+    @State var isSubscribed = false
     
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
+            
             Text("ContentView")
+            Text("isPremium: \(isSubscribed ? "yes" : "no")")
             
             Button(action: {
                 showPaywall.toggle()
@@ -29,9 +32,7 @@ struct ContentView: View {
         .fullScreenCover(isPresented: $showPaywall, content: {
             PaywallWrapper.show(from: "onboarding") { result in
                 print("PaywallResult \(result)")
-                if result == .purchase {
-                    //show something...
-                }
+                isSubscribed = result == .purchase
             }
         })
     

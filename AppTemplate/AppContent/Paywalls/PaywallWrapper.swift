@@ -6,10 +6,7 @@
 //
 
 import SwiftUI
-
-public protocol PaywallProtocol {
-    var paywallID: String { get }
-}
+import CoreIntegrations
 
 typealias PaywallResultClosure = ((PaywallCloseResult) -> Void)
 
@@ -19,15 +16,33 @@ enum PaywallCloseResult {
     case showSpecialOffer
 }
 
-enum PaywallType: String, CaseIterable {
-    //the same values as remote console has
-    case ct_vap_1 = "ct_vap_1"
-    case ct_vap_2 = "ct_vap_2"
-    case ct_vap_3 = "ct_vap_3"
+class PaywallWrapper: NSObject {
+    /*
+     if RemoteABTests.special_offer_shown.boolValue && !PaywallWrapper.exceptPaywalls.contains(.ct_vap_2) {
+                //show special offer
+     }
+     */
+    static let exceptPaywalls:[PaywallType] = [.ct_vap_1, .ct_vap_3]
+    
+    static func show(from source: String, onClose: PaywallResultClosure? = nil) -> UIViewController {
+        let rootvc = vc(source, onClose)
+        rootvc.modalPresentationStyle = .fullScreen
+        rootvc.screenSource = source
+        rootvc.view.backgroundColor = .white
+        return rootvc
+    }
+    
+    static func show(from source: String, onClose: PaywallResultClosure? = nil) -> some View {
+        view(source, onClose)
+    }
+    
+    private static var active_paywall: PaywallType {
+        return PaywallType.allCases.first(where: {$0.id == AppCoreManager.shared.configurationResult?.activePaywallName}) ?? .ct_vap_1
+    }
     
     //use SwiftUI view in UIKit project
-    func vc(_ source: String, _ closeResult: PaywallResultClosure? = nil) -> UIViewController {
-        switch self {
+    private static func vc(_ source: String, _ closeResult: PaywallResultClosure? = nil) -> UIViewController {
+        switch active_paywall {
         case .ct_vap_1:
             return represent(Paywall_A(screenSource: source, closeResult:closeResult))
         case .ct_vap_2:
@@ -40,9 +55,9 @@ enum PaywallType: String, CaseIterable {
     }
     
     //use SwiftUI view in SwiftUI project
-    func view(_ source: String, _ closeResult: PaywallResultClosure? = nil) -> some View {
+    private static func view(_ source: String, _ closeResult: PaywallResultClosure? = nil) -> some View {
         Group {
-            switch self {
+            switch active_paywall {
             case .ct_vap_1:
                  Paywall_A(screenSource: source, closeResult:closeResult)
             case .ct_vap_2:
@@ -55,36 +70,10 @@ enum PaywallType: String, CaseIterable {
     }
     
     //make UIViewController from SwiftUI View
-    private func represent(_ view: some View) -> UIViewController {
+    private static func represent(_ view: some View) -> UIViewController {
         let hostingController = HostingController(rootView: view )
         hostingController.modalPresentationStyle = .fullScreen
         return hostingController
-    }
-    
-}
-
-class PaywallWrapper: NSObject {
-    /*
-     if RemoteABTests.special_offer_shown.boolValue && !PaywallWrapper.exceptPaywalls.contains(.ct_vap_2) {
-                //show special offer
-     }
-     */
-    static let exceptPaywalls:[PaywallType] = [.ct_vap_1, .ct_vap_3]
-    
-    static func show(from source: String, onClose: PaywallResultClosure? = nil) -> UIViewController {
-        let rootvc = active_paywall.vc(source, onClose)
-        rootvc.modalPresentationStyle = .fullScreen
-        rootvc.screenSource = source
-        rootvc.view.backgroundColor = .white
-        return rootvc
-    }
-    
-    static func show(from source: String, onClose: PaywallResultClosure? = nil) -> some View {
-        active_paywall.view(source, onClose)
-    }
-    
-    private static var active_paywall: PaywallType {
-        return PaywallType.allCases.first(where: {$0.rawValue == AppCoreManager.shared.configurationResult?.activePaywallName}) ?? .ct_vap_1
     }
 }
 

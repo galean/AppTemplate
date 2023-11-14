@@ -7,12 +7,11 @@
 
 import SwiftUI
 
-struct Paywall_B: View, PaywallProtocol {
+struct Paywall_B: View, PaywallViewProtocol {
     
     @Environment(\.dismiss) var dismiss
     
-    @State var subscriptions: [Subscription] = []
-    let paywallID = "ct_vap_2"
+    let paywallIdentifier: PaywallType = .ct_vap_2
     let screenSource: String
     let closeResult: PaywallResultClosure?
     
@@ -28,11 +27,11 @@ struct Paywall_B: View, PaywallProtocol {
             Spacer()
             
             Text("Hello, Paywall_B!")
-            /*
-            ForEach(subscriptions, id: \.self){ subscription in
+            
+            ForEach(paywallIdentifier.subscriptions, id: \.self){ subscription in
                 Text("Subscribe for: \(subscription.localisedPrice)/\(subscription.periodString)")
             }
-            */
+            
             Spacer()
             
             Button(action: {
@@ -40,13 +39,6 @@ struct Paywall_B: View, PaywallProtocol {
                 closeResult?(.purchase)
             }) {
                 Text("Subscribe")
-            }
-        }
-        .onAppear {
-            SubscriptionManager.shared.subscriptions(for: paywallID) { data in
-                if let data = data {
-                    self.subscriptions = data
-                }
             }
         }
     }

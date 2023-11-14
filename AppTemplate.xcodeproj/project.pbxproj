@@ -13,7 +13,9 @@
 		AB29988B2AFE402E00A0D5E3 /* Paywall_B.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB29988A2AFE402E00A0D5E3 /* Paywall_B.swift */; };
 		AB29988D2AFE40D100A0D5E3 /* Paywall_UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB29988C2AFE40D100A0D5E3 /* Paywall_UIKit.swift */; };
 		AB29988F2AFE4DB700A0D5E3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB29988E2AFE4DB700A0D5E3 /* GoogleService-Info.plist */; };
-		AB2998922B0244BB00A0D5E3 /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2998912B0244BB00A0D5E3 /* Subscription.swift */; };
+		AB2998922B0244BB00A0D5E3 /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2998912B0244BB00A0D5E3 /* Purchase.swift */; };
+		ABEDFA102B036C3400C29C6C /* PaywallType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDFA0F2B036C3400C29C6C /* PaywallType.swift */; };
+		ABEDFA122B03DC5700C29C6C /* PaywallViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDFA112B03DC5700C29C6C /* PaywallViewProtocol.swift */; };
 		C72BBA802AD96F3D00AB1E87 /* CoreIntegrations in Frameworks */ = {isa = PBXBuildFile; productRef = C72BBA7F2AD96F3D00AB1E87 /* CoreIntegrations */; };
 		C72FB0B129A37F6300F8DEEF /* AppTemplateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72FB0B029A37F6300F8DEEF /* AppTemplateApp.swift */; };
 		C72FB0B329A37F6300F8DEEF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72FB0B229A37F6300F8DEEF /* ContentView.swift */; };
@@ -22,14 +24,12 @@
 		C72FB0BF29A3919000F8DEEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72FB0BE29A3919000F8DEEF /* AppDelegate.swift */; };
 		C72FB0DF29A3A2DF00F8DEEF /* AppCoreSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72FB0DE29A3A2DF00F8DEEF /* AppCoreSettings.swift */; };
 		C72FB0E129A3BC1000F8DEEF /* UDStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72FB0E029A3BC1000F8DEEF /* UDStorage.swift */; };
-		C72FB0ED29A3CE7000F8DEEF /* SubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72FB0EC29A3CE7000F8DEEF /* SubscriptionManager.swift */; };
 		C75CFA9F2ADD33F2009D5B28 /* AttDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75CFA9E2ADD33F2009D5B28 /* AttDataSource.swift */; };
 		C779D9752ACB0AD700EAABB1 /* CoreIntegrations in Frameworks */ = {isa = PBXBuildFile; productRef = C779D9742ACB0AD700EAABB1 /* CoreIntegrations */; };
 		C779D9772ACC197D00EAABB1 /* AppCoreConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779D9762ACC197D00EAABB1 /* AppCoreConfiguration.swift */; };
 		C779D9792ACC19B900EAABB1 /* AppAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779D9782ACC19B900EAABB1 /* AppAnalytics.swift */; };
 		C779D97B2ACC19E700EAABB1 /* AppRemoteConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779D97A2ACC19E700EAABB1 /* AppRemoteConfig.swift */; };
-		C79D95FD2A3C60F10071C58E /* SubscriptionPriceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79D95FC2A3C60F10071C58E /* SubscriptionPriceManager.swift */; };
-		C79D95FF2A3C60F90071C58E /* SubscriptionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79D95FE2A3C60F90071C58E /* SubscriptionType.swift */; };
+		C79D95FF2A3C60F90071C58E /* PurchaseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79D95FE2A3C60F90071C58E /* PurchaseType.swift */; };
 		C79D96012A3C61010071C58E /* PaywallState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79D96002A3C61010071C58E /* PaywallState.swift */; };
 		C79D96092A3C62F80071C58E /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79D96082A3C62F80071C58E /* Dictionary.swift */; };
 		C79D960B2A3C630A0071C58E /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79D960A2A3C630A0071C58E /* LaunchView.swift */; };
@@ -44,7 +44,9 @@
 		AB29988A2AFE402E00A0D5E3 /* Paywall_B.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paywall_B.swift; sourceTree = "<group>"; };
 		AB29988C2AFE40D100A0D5E3 /* Paywall_UIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paywall_UIKit.swift; sourceTree = "<group>"; };
 		AB29988E2AFE4DB700A0D5E3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		AB2998912B0244BB00A0D5E3 /* Subscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
+		AB2998912B0244BB00A0D5E3 /* Purchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchase.swift; sourceTree = "<group>"; };
+		ABEDFA0F2B036C3400C29C6C /* PaywallType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallType.swift; sourceTree = "<group>"; };
+		ABEDFA112B03DC5700C29C6C /* PaywallViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallViewProtocol.swift; sourceTree = "<group>"; };
 		C72FB0AD29A37F6300F8DEEF /* AppTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C72FB0B029A37F6300F8DEEF /* AppTemplateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTemplateApp.swift; sourceTree = "<group>"; };
 		C72FB0B229A37F6300F8DEEF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,13 +55,11 @@
 		C72FB0BE29A3919000F8DEEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C72FB0DE29A3A2DF00F8DEEF /* AppCoreSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoreSettings.swift; sourceTree = "<group>"; };
 		C72FB0E029A3BC1000F8DEEF /* UDStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDStorage.swift; sourceTree = "<group>"; };
-		C72FB0EC29A3CE7000F8DEEF /* SubscriptionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionManager.swift; sourceTree = "<group>"; };
 		C75CFA9E2ADD33F2009D5B28 /* AttDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttDataSource.swift; sourceTree = "<group>"; };
 		C779D9762ACC197D00EAABB1 /* AppCoreConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoreConfiguration.swift; sourceTree = "<group>"; };
 		C779D9782ACC19B900EAABB1 /* AppAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAnalytics.swift; sourceTree = "<group>"; };
 		C779D97A2ACC19E700EAABB1 /* AppRemoteConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRemoteConfig.swift; sourceTree = "<group>"; };
-		C79D95FC2A3C60F10071C58E /* SubscriptionPriceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionPriceManager.swift; sourceTree = "<group>"; };
-		C79D95FE2A3C60F90071C58E /* SubscriptionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionType.swift; sourceTree = "<group>"; };
+		C79D95FE2A3C60F90071C58E /* PurchaseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseType.swift; sourceTree = "<group>"; };
 		C79D96002A3C61010071C58E /* PaywallState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallState.swift; sourceTree = "<group>"; };
 		C79D96082A3C62F80071C58E /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		C79D960A2A3C630A0071C58E /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
@@ -84,6 +84,8 @@
 			isa = PBXGroup;
 			children = (
 				AB2998842AFE3F5C00A0D5E3 /* PaywallWrapper.swift */,
+				ABEDFA112B03DC5700C29C6C /* PaywallViewProtocol.swift */,
+				ABEDFA0F2B036C3400C29C6C /* PaywallType.swift */,
 				AB2998882AFE3FE800A0D5E3 /* Paywall_A.swift */,
 				AB29988A2AFE402E00A0D5E3 /* Paywall_B.swift */,
 				AB29988C2AFE40D100A0D5E3 /* Paywall_UIKit.swift */,
@@ -169,11 +171,9 @@
 		C72FB0E929A3CD7D00F8DEEF /* Subscription */ = {
 			isa = PBXGroup;
 			children = (
-				C72FB0EC29A3CE7000F8DEEF /* SubscriptionManager.swift */,
-				C79D95FC2A3C60F10071C58E /* SubscriptionPriceManager.swift */,
-				C79D95FE2A3C60F90071C58E /* SubscriptionType.swift */,
+				AB2998912B0244BB00A0D5E3 /* Purchase.swift */,
+				C79D95FE2A3C60F90071C58E /* PurchaseType.swift */,
 				C79D96002A3C61010071C58E /* PaywallState.swift */,
-				AB2998912B0244BB00A0D5E3 /* Subscription.swift */,
 			);
 			path = Subscription;
 			sourceTree = "<group>";
@@ -300,18 +300,18 @@
 				AB29988B2AFE402E00A0D5E3 /* Paywall_B.swift in Sources */,
 				C79D96012A3C61010071C58E /* PaywallState.swift in Sources */,
 				C79D960B2A3C630A0071C58E /* LaunchView.swift in Sources */,
-				AB2998922B0244BB00A0D5E3 /* Subscription.swift in Sources */,
+				ABEDFA122B03DC5700C29C6C /* PaywallViewProtocol.swift in Sources */,
+				AB2998922B0244BB00A0D5E3 /* Purchase.swift in Sources */,
 				C75CFA9F2ADD33F2009D5B28 /* AttDataSource.swift in Sources */,
-				C79D95FD2A3C60F10071C58E /* SubscriptionPriceManager.swift in Sources */,
 				C779D9772ACC197D00EAABB1 /* AppCoreConfiguration.swift in Sources */,
 				C72FB0BF29A3919000F8DEEF /* AppDelegate.swift in Sources */,
 				C7F2EB882AD88BE300D2BC00 /* AppConfigurationEvents.swift in Sources */,
 				C72FB0B329A37F6300F8DEEF /* ContentView.swift in Sources */,
 				C72FB0E129A3BC1000F8DEEF /* UDStorage.swift in Sources */,
 				AB2998832AFE3D9F00A0D5E3 /* Array.swift in Sources */,
-				C72FB0ED29A3CE7000F8DEEF /* SubscriptionManager.swift in Sources */,
 				AB2998852AFE3F5C00A0D5E3 /* PaywallWrapper.swift in Sources */,
-				C79D95FF2A3C60F90071C58E /* SubscriptionType.swift in Sources */,
+				C79D95FF2A3C60F90071C58E /* PurchaseType.swift in Sources */,
+				ABEDFA102B036C3400C29C6C /* PaywallType.swift in Sources */,
 				C7F2EB832AD681FA00D2BC00 /* AppCoreManager.swift in Sources */,
 				C79D96092A3C62F80071C58E /* Dictionary.swift in Sources */,
 				AB29988D2AFE40D100A0D5E3 /* Paywall_UIKit.swift in Sources */,
