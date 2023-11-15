@@ -17,10 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func defaultConfiguration(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
-//        CoreManager.shared.application(application,
-//                                       didFinishLaunchingWithOptions: launchOptions,
-//                                       coreCofiguration: AppCoreConfiguration(),
-//                                       coreDelegate: AppCoreManager.shared)
+        CoreManager.shared.application(application,
+                                       didFinishLaunchingWithOptions: launchOptions,
+                                       coreCofiguration: AppCoreConfiguration(),
+                                       coreDelegate: AppCoreManager.shared)
     }
 
     func application( _ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:] ) -> Bool {

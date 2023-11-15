@@ -16,15 +16,9 @@ enum PaywallCloseResult {
     case showSpecialOffer
 }
 
-class PaywallWrapper: NSObject {
-    /*
-     if RemoteABTests.special_offer_shown.boolValue && !PaywallWrapper.exceptPaywalls.contains(.ct_vap_2) {
-                //show special offer
-     }
-     */
-    static let exceptPaywalls:[PaywallType] = [.ct_vap_1, .ct_vap_3]
+class PaywallFactory: NSObject {
     
-    static func show(from source: String, onClose: PaywallResultClosure? = nil) -> UIViewController {
+    static func create(from source: String, onClose: PaywallResultClosure? = nil) -> UIViewController {
         let rootvc = vc(source, onClose)
         rootvc.modalPresentationStyle = .fullScreen
         rootvc.screenSource = source
@@ -32,12 +26,12 @@ class PaywallWrapper: NSObject {
         return rootvc
     }
     
-    static func show(from source: String, onClose: PaywallResultClosure? = nil) -> some View {
+    static func create(from source: String, onClose: PaywallResultClosure? = nil) -> some View {
         view(source, onClose)
     }
     
-    private static var active_paywall: PaywallType {
-        return PaywallType.allCases.first(where: {$0.id == AppCoreManager.shared.configurationResult?.activePaywallName}) ?? .ct_vap_1
+    private static var active_paywall: PaywallConfig {
+        return PaywallConfig.allCases.first(where: {$0.id == AppCoreManager.shared.configurationResult?.activePaywallName}) ?? .ct_vap_1
     }
     
     //use SwiftUI view in UIKit project
@@ -59,9 +53,38 @@ class PaywallWrapper: NSObject {
         Group {
             switch active_paywall {
             case .ct_vap_1:
-                 Paywall_A(screenSource: source, closeResult:closeResult)
+                Paywall_A(screenSource: source, closeResult:closeResult)
             case .ct_vap_2:
-                 Paywall_B(screenSource: source, closeResult:closeResult)
+                Paywall_B(screenSource: source, closeResult:closeResult)
+            case .ct_vap_3:
+                // Representable container
+                Paywall_UIKitRepresentable(closeResult: closeResult)
+            }
+        }
+    }
+    
+    //create view controller for custom paywall id
+    private static func vc(_ paywallID:PaywallConfig, _ source: String, _ closeResult: PaywallResultClosure? = nil) -> UIViewController {
+        switch paywallID {
+        case .ct_vap_1:
+            return represent(Paywall_A(screenSource: source, closeResult:closeResult))
+        case .ct_vap_2:
+            return represent(Paywall_B(screenSource: source, closeResult:closeResult))
+        case .ct_vap_3:
+            let ct_vap_3 = Paywall_UIKit()
+            ct_vap_3.closeResult = closeResult
+            return ct_vap_3
+        }
+    }
+    
+    //create view for custom paywall id
+    private static func view(_ paywallID:PaywallConfig, _ source: String, _ closeResult: PaywallResultClosure? = nil) -> some View {
+        Group {
+            switch paywallID {
+            case .ct_vap_1:
+                Paywall_A(screenSource: source, closeResult:closeResult)
+            case .ct_vap_2:
+                Paywall_B(screenSource: source, closeResult:closeResult)
             case .ct_vap_3:
                 // Representable container
                 Paywall_UIKitRepresentable(closeResult: closeResult)

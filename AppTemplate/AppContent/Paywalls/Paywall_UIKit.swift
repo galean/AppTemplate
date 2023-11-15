@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftUI
+import CoreIntegrations
 
 class Paywall_UIKit: UIViewController, PaywallViewProtocol {
     
@@ -41,13 +42,19 @@ class Paywall_UIKit: UIViewController, PaywallViewProtocol {
         return button
     }()
         
-    let paywallIdentifier: PaywallType = .ct_vap_3
+    let paywallConfig: PaywallConfig = .ct_vap_3
     var closeResult: PaywallResultClosure? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViews()
+        
+        //in case of internet absence and empty "paywallConfig.purchases" - request subscriptions again
+        //            paywallConfig.purchases { purchases in
+        //
+        //            }
+        
     }
     
     private func setupViews() {
@@ -71,8 +78,8 @@ class Paywall_UIKit: UIViewController, PaywallViewProtocol {
         subscribeButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         
        /*
-        for subscription in paywallIdentifier.subscriptions {
-            "\(subscription.localisedPrice)/\(subscription.periodString)"
+        for purchase in paywallConfig.purchases {
+            "\(purchase.localisedPrice)/\(purchase.periodString)"
         }
         */
         
@@ -86,6 +93,18 @@ class Paywall_UIKit: UIViewController, PaywallViewProtocol {
     @objc private func subscribeAction() {
         dismiss(animated: true)
         closeResult?(.purchase)
+    }
+    
+    private func purchase(_ purchase: Purchase) {
+        CoreManager.shared.purchase(purchase) { result in
+            
+        }
+    }
+    
+    private func restore() {
+        CoreManager.shared.restorePremium { result in
+            
+        }
     }
 }
 

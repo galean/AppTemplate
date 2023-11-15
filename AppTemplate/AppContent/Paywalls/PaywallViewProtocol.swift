@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol PaywallViewProtocol {
-    var paywallIdentifier: PaywallType { get }
+    var paywallConfig: PaywallConfig { get }
 }

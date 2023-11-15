@@ -30,7 +30,7 @@ struct ContentView: View {
         }
         .padding()
         .fullScreenCover(isPresented: $showPaywall, content: {
-            PaywallWrapper.show(from: "onboarding") { result in
+            PaywallFactory.create(from: "onboarding") { result in
                 print("PaywallResult \(result)")
                 isSubscribed = result == .purchase
             }

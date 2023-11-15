@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import CoreIntegrations
 
 struct Paywall_A: View, PaywallViewProtocol {
-    
+   
     @Environment(\.dismiss) var dismiss
     
-    let paywallIdentifier:PaywallType = .ct_vap_1
+    let paywallConfig:PaywallConfig = .ct_vap_1
     let screenSource: String
     let closeResult: PaywallResultClosure?
     
@@ -28,8 +29,8 @@ struct Paywall_A: View, PaywallViewProtocol {
             
             Text("Hello, Paywall_A!")
       
-            ForEach(paywallIdentifier.subscriptions, id: \.self){ subscription in
-                Text("Subscribe for: \(subscription.localisedPrice)/\(subscription.periodString)")
+            ForEach(paywallConfig.purchases, id: \.self){ purchase in
+                Text("Subscribe for: \(purchase.localisedPrice)/\(purchase.periodString)")
             }
             
             Spacer()
@@ -41,17 +42,23 @@ struct Paywall_A: View, PaywallViewProtocol {
                 Text("Subscribe")
             }
         }
+        .onAppear {
+            //in case of internet absence and empty "paywallConfig.purchases" - request subscriptions again
+//            paywallConfig.purchases { purchases in
+//
+//            }
+        }
           
     }
     
-    func purchase(_ subscription: Purchase) {
-        paywallIdentifier.purchase(subscription: subscription) { status in
+    private func purchase(_ purchase: Purchase) {
+        CoreManager.shared.purchase(purchase) { result in
             
         }
     }
     
-    func restore() {
-        paywallIdentifier.restore { status in
+    private func restore() {
+        CoreManager.shared.restorePremium { result in
             
         }
     }
