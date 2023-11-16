@@ -52,8 +52,14 @@ class Paywall_UIKit: UIViewController, PaywallViewProtocol {
         
         setupViews()
         
-        paywallConfig.purchases { purchases in
-            self.purchases = purchases
+        paywallConfig.purchases { result in
+            switch result {
+            case .success(let purchases):
+                self.purchases = purchases
+            case .error(let error):
+                print("paywallConfig.purchases error \(error)")
+            }
+            
         }
         
     }
