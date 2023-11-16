@@ -27,7 +27,7 @@ extension AppCoreManager: CoreManagerDelegate {
         if result.userSource == .ipat {
             //set internal values for ipat
         }
-        
+        print("coreConfigurationFinished \(result)")
         configurationResult = result
         configurationFinished = true
         configurationFinishCompletion?()

@@ -42,6 +42,8 @@ class Paywall_UIKit: UIViewController, PaywallViewProtocol {
         return button
     }()
         
+    var purchases: [Purchase] = []
+    
     let paywallConfig: PaywallConfig = .ct_vap_3
     var closeResult: PaywallResultClosure? = nil
     
@@ -50,10 +52,9 @@ class Paywall_UIKit: UIViewController, PaywallViewProtocol {
         
         setupViews()
         
-        //in case of internet absence and empty "paywallConfig.purchases" - request subscriptions again
-        //            paywallConfig.purchases { purchases in
-        //
-        //            }
+        paywallConfig.purchases { purchases in
+            self.purchases = purchases
+        }
         
     }
     
@@ -78,7 +79,7 @@ class Paywall_UIKit: UIViewController, PaywallViewProtocol {
         subscribeButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         
        /*
-        for purchase in paywallConfig.purchases {
+        for purchase in self.purchases {
             "\(purchase.localisedPrice)/\(purchase.periodString)"
         }
         */

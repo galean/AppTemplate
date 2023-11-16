@@ -11,6 +11,7 @@ import CoreIntegrations
 struct Paywall_A: View, PaywallViewProtocol {
    
     @Environment(\.dismiss) var dismiss
+    @State var purchases: [Purchase] = []
     
     let paywallConfig:PaywallConfig = .ct_vap_1
     let screenSource: String
@@ -29,7 +30,7 @@ struct Paywall_A: View, PaywallViewProtocol {
             
             Text("Hello, Paywall_A!")
       
-            ForEach(paywallConfig.purchases, id: \.self){ purchase in
+            ForEach(purchases, id: \.self){ purchase in
                 Text("Subscribe for: \(purchase.localisedPrice)/\(purchase.periodString)")
             }
             
@@ -43,10 +44,9 @@ struct Paywall_A: View, PaywallViewProtocol {
             }
         }
         .onAppear {
-            //in case of internet absence and empty "paywallConfig.purchases" - request subscriptions again
-//            paywallConfig.purchases { purchases in
-//
-//            }
+            paywallConfig.purchases { purchases in
+                self.purchases = purchases
+            }
         }
           
     }

@@ -12,10 +12,10 @@
 		AB2998892AFE3FE800A0D5E3 /* Paywall_A.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2998882AFE3FE800A0D5E3 /* Paywall_A.swift */; };
 		AB29988B2AFE402E00A0D5E3 /* Paywall_B.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB29988A2AFE402E00A0D5E3 /* Paywall_B.swift */; };
 		AB29988D2AFE40D100A0D5E3 /* Paywall_UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB29988C2AFE40D100A0D5E3 /* Paywall_UIKit.swift */; };
-		AB29988F2AFE4DB700A0D5E3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB29988E2AFE4DB700A0D5E3 /* GoogleService-Info.plist */; };
 		ABEDFA102B036C3400C29C6C /* PaywallConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDFA0F2B036C3400C29C6C /* PaywallConfig.swift */; };
 		ABEDFA122B03DC5700C29C6C /* PaywallViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDFA112B03DC5700C29C6C /* PaywallViewProtocol.swift */; };
 		ABEDFA142B051C0500C29C6C /* PaywallDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDFA132B051C0500C29C6C /* PaywallDataSource.swift */; };
+		ABEDFA192B0625B700C29C6C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ABEDFA182B0625B700C29C6C /* GoogleService-Info.plist */; };
 		C72BBA802AD96F3D00AB1E87 /* CoreIntegrations in Frameworks */ = {isa = PBXBuildFile; productRef = C72BBA7F2AD96F3D00AB1E87 /* CoreIntegrations */; };
 		C72FB0B129A37F6300F8DEEF /* AppTemplateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72FB0B029A37F6300F8DEEF /* AppTemplateApp.swift */; };
 		C72FB0B329A37F6300F8DEEF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72FB0B229A37F6300F8DEEF /* ContentView.swift */; };
@@ -42,10 +42,10 @@
 		AB2998882AFE3FE800A0D5E3 /* Paywall_A.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paywall_A.swift; sourceTree = "<group>"; };
 		AB29988A2AFE402E00A0D5E3 /* Paywall_B.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paywall_B.swift; sourceTree = "<group>"; };
 		AB29988C2AFE40D100A0D5E3 /* Paywall_UIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paywall_UIKit.swift; sourceTree = "<group>"; };
-		AB29988E2AFE4DB700A0D5E3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ABEDFA0F2B036C3400C29C6C /* PaywallConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallConfig.swift; sourceTree = "<group>"; };
 		ABEDFA112B03DC5700C29C6C /* PaywallViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallViewProtocol.swift; sourceTree = "<group>"; };
 		ABEDFA132B051C0500C29C6C /* PaywallDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallDataSource.swift; sourceTree = "<group>"; };
+		ABEDFA182B0625B700C29C6C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C72FB0AD29A37F6300F8DEEF /* AppTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C72FB0B029A37F6300F8DEEF /* AppTemplateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTemplateApp.swift; sourceTree = "<group>"; };
 		C72FB0B229A37F6300F8DEEF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 		C72FB0A429A37F6300F8DEEF = {
 			isa = PBXGroup;
 			children = (
-				AB29988E2AFE4DB700A0D5E3 /* GoogleService-Info.plist */,
+				ABEDFA182B0625B700C29C6C /* GoogleService-Info.plist */,
 				C779D96D2ACAFF7D00EAABB1 /* Packages */,
 				C72FB0AF29A37F6300F8DEEF /* AppTemplate */,
 				C72FB0AE29A37F6300F8DEEF /* Products */,
@@ -282,7 +282,7 @@
 			files = (
 				C72FB0B829A37F6500F8DEEF /* Preview Assets.xcassets in Resources */,
 				C72FB0B529A37F6500F8DEEF /* Assets.xcassets in Resources */,
-				AB29988F2AFE4DB700A0D5E3 /* GoogleService-Info.plist in Resources */,
+				ABEDFA192B0625B700C29C6C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,6 +453,7 @@
 				DEVELOPMENT_TEAM = 9VPMTNC87M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "йцуйцуйцу";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -486,6 +487,7 @@
 				DEVELOPMENT_TEAM = 9VPMTNC87M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "йцуйцуйцу";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

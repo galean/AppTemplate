@@ -13,8 +13,7 @@ struct AttDataSource:AttributionServerDataSource {
         case install = "/install-application"
         case purchase = "/subscribe"
         static var serverURLPath: String {
-            #warning("Dont forget to change it!")
-            return "https://endpoint.com"
+            return "https://subscriptions.apitlm.com"
         }
     }
 }
