@@ -8,11 +8,12 @@
 import Foundation
 import CoreIntegrations
 
-struct AppCoreConfiguration: CoreConfigurationProtocol {
+struct AppCoreConfiguration: CoreConfigurationProtocol {    
+    var attributionServerDataSource: any AttributionServerDataSource = AttDataSource()
     var appSettings: CoreSettingsProtocol = AppSettings()
     var remoteConfigDataSource: any CoreRemoteDataSource = RemoteConfigDataSource()
     var amplitudeDataSource: any CoreAnalyticsDataSource = AnalyticsDataSource()
-    var initialConfigurationDataSource: any ConfigurationEventsDataSource = AppConfigurationDataSource()
-    var attributionServerDataSource: any AttributionServerDataSource = AppAttributionDataSource()
+    var initialConfigurationDataSource: (any ConfigurationEventsDataSource)? = nil
     var useDefaultATTRequest = true
+    var paywallDataSource: any CorePaywallDataSource = PaywallDataSource()
 }

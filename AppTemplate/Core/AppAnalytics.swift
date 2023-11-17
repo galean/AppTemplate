@@ -38,7 +38,8 @@ enum AppAnalyticsEvents: String, CoreAnalyzableEvent {
 }
 
 enum AppAnalyticsUserProperties: String, CoreAnalyzableUserProperty {
-    case anyEvent
+    case screenshot_taken
+    case camera_access
     
     var key: String { return rawValue }
 }
