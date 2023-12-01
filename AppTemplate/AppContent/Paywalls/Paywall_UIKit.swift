@@ -50,6 +50,8 @@ class Paywall_UIKit: UIViewController, PaywallViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        AppAnalyticsEvents.subscription_shown.log(parameters: ["id":paywallConfig.id])
+        
         setupViews()
         
         paywallConfig.purchases { result in
@@ -103,12 +105,16 @@ class Paywall_UIKit: UIViewController, PaywallViewProtocol {
     }
     
     private func purchase(_ purchase: Purchase) {
+        AppAnalyticsEvents.subscription_subscribe_clicked.log()
+        
         CoreManager.shared.purchase(purchase) { result in
             
         }
     }
     
     private func restore() {
+        AppAnalyticsEvents.subscription_restore_clicked.log()
+        
         CoreManager.shared.restorePremium { result in
             
         }

@@ -44,6 +44,8 @@ struct Paywall_A: View, PaywallViewProtocol {
             }
         }
         .onAppear {
+            AppAnalyticsEvents.subscription_shown.log(parameters: ["id":paywallConfig.id])
+            
             paywallConfig.purchases { result in
                 switch result {
                 case .success(let purchases):
@@ -58,12 +60,16 @@ struct Paywall_A: View, PaywallViewProtocol {
     }
     
     private func purchase(_ purchase: Purchase) {
+        AppAnalyticsEvents.subscription_subscribe_clicked.log()
+        
         CoreManager.shared.purchase(purchase) { result in
             
         }
     }
     
     private func restore() {
+        AppAnalyticsEvents.subscription_restore_clicked.log()
+        
         CoreManager.shared.restorePremium { result in
             
         }

@@ -41,8 +41,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/galean/CoreIntegrations",
       "state" : {
-        "branch" : "feature/refactoring",
-        "revision" : "df5925803d978651834d7d06cf6da3566788639c"
+        "branch" : "mainRC",
+        "revision" : "9870a6a871c08ac3bbca4c4ab9db9523082034cc"
       }
     },
     {
