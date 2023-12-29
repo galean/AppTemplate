@@ -41,8 +41,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/galean/CoreIntegrations",
       "state" : {
-        "branch" : "mainRC",
-        "revision" : "9870a6a871c08ac3bbca4c4ab9db9523082034cc"
+        "branch" : "feature/paywall_r",
+        "revision" : "e22353e4548458b5d00d7272b91850f194ac157f"
       }
     },
     {
@@ -149,8 +149,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/RevenueCat/purchases-ios",
       "state" : {
-        "revision" : "315715026c7844d38bd14335452e19a35a5275c5",
-        "version" : "4.28.0"
+        "revision" : "b8d20ba1c8e13cc73d72e37cf98607d01fd357b6",
+        "version" : "4.31.2"
       }
     },
     {

@@ -8,6 +8,7 @@
 import SwiftUI
 import CoreIntegrations
 
+//MARK: Paywall for production
 struct Paywall_B: View, PaywallViewProtocol {
     
     @Environment(\.dismiss) var dismiss

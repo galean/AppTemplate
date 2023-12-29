@@ -1,25 +1,25 @@
 //
-//  Paywall_A.swift
+//  Paywall_B_r.swift
 //  AppTemplate
 //
-//  Created by Anatolii Kanarskyi on 10/11/23.
+//  Created by Anatolii Kanarskyi on 29/12/23.
 //
 
 import SwiftUI
 import CoreIntegrations
 
-//MARK: Paywall for production
-struct Paywall_A: View, PaywallViewProtocol {
-   
+//MARK: Paywall for review
+struct Paywall_B_r: View, PaywallViewProtocol {
+    
     @Environment(\.dismiss) var dismiss
     @State var purchases: [Purchase] = []
     
-    let paywallConfig:PaywallConfig = .ct_vap_1
+    let paywallConfig: PaywallConfig = .ct_vap_2
     let screenSource: String
     let closeResult: PaywallResultClosure?
     
     var body: some View {
-        VStack {
+        VStack{
             Button(action: {
                 dismiss()
                 closeResult?(.close)
@@ -29,8 +29,8 @@ struct Paywall_A: View, PaywallViewProtocol {
             
             Spacer()
             
-            Text("Hello, Paywall_A!")
-      
+            Text("Hello, Paywall_B_r!")
+            
             ForEach(purchases, id: \.self){ purchase in
                 Text("Subscribe for: \(purchase.localisedPrice)/\(purchase.periodString)")
             }
@@ -57,7 +57,6 @@ struct Paywall_A: View, PaywallViewProtocol {
                 
             }
         }
-          
     }
     
     private func purchase(_ purchase: Purchase) {
@@ -78,5 +77,5 @@ struct Paywall_A: View, PaywallViewProtocol {
 }
 
 #Preview {
-    Paywall_A(screenSource: "onboarding") { result in }
+    Paywall_B_r(screenSource: "settings") { result in }
 }

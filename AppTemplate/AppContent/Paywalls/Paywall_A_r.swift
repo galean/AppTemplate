@@ -1,15 +1,15 @@
 //
-//  Paywall_A.swift
+//  Paywall_A_r.swift
 //  AppTemplate
 //
-//  Created by Anatolii Kanarskyi on 10/11/23.
+//  Created by Anatolii Kanarskyi on 29/12/23.
 //
 
 import SwiftUI
 import CoreIntegrations
 
-//MARK: Paywall for production
-struct Paywall_A: View, PaywallViewProtocol {
+//MARK: Paywall for review
+struct Paywall_A_r: View, PaywallViewProtocol {
    
     @Environment(\.dismiss) var dismiss
     @State var purchases: [Purchase] = []
@@ -29,7 +29,7 @@ struct Paywall_A: View, PaywallViewProtocol {
             
             Spacer()
             
-            Text("Hello, Paywall_A!")
+            Text("Hello, Paywall_A_r!")
       
             ForEach(purchases, id: \.self){ purchase in
                 Text("Subscribe for: \(purchase.localisedPrice)/\(purchase.periodString)")
@@ -78,5 +78,5 @@ struct Paywall_A: View, PaywallViewProtocol {
 }
 
 #Preview {
-    Paywall_A(screenSource: "onboarding") { result in }
+    Paywall_A_r(screenSource: "onboarding") { result in }
 }
