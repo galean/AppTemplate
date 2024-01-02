@@ -68,11 +68,14 @@ enum RemoteABTests: String, CoreRemoteABTestable {
 
 
 enum RemoteConfigs: String, CaseIterable, CoreRemoteConfigurable {
+    
     var activeForSources: [CoreUserSource] {
         switch self {
+            //remote config will be active for sources mentioned in CoreUserSource
         case .subscription_screen_style_full, .subscription_screen_style_h,
                 .rate_us_primary_shown, .rate_us_secondary_shown, .isRateUsAvailable:
-            return CoreUserSource.allCases.except(.ipat)
+            return CoreUserSource.allCases
+            //if you want to disable (always set to "none") some of configs for source - use it like this: "return CoreUserSource.allCases.except(.ipat)"
         }
     }
     
