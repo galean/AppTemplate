@@ -538,7 +538,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/galean/CoreIntegrations";
 			requirement = {
-				branch = mainRC;
+				branch = feature/force_update;
 				kind = branch;
 			};
 		};
