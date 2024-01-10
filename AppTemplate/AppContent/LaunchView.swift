@@ -12,7 +12,9 @@ class LaunchViewModel: ObservableObject {
     
     func handleOnAppear() {
         AppCoreManager.shared.configurationFinishCompletion = {
-            self.showNextScreen = true
+            DispatchQueue.main.async {
+                self.showNextScreen = true
+            }
         }
     }
 }
