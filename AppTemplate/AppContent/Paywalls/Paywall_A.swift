@@ -55,14 +55,24 @@ struct Paywall_A: View, PaywallViewProtocol {
                 }
                 
             }
+            
+            //get promo offers async
+            Task {
+                let promoOffers = await paywallConfig.promoOffers(for:self.purchases.first!)
+            }
         }
           
     }
     
-    private func purchase(_ purchase: Purchase) {
+    private func purchase(_ purchase: Purchase, _ promo: PromoOffer) {
         AppAnalyticsEvents.subscription_subscribe_clicked.log()
         
-        CoreManager.shared.purchase(purchase) { result in
+        //async
+        Task {
+            let purchase = await CoreManager.shared.purchase(purchase, promo)
+        }
+        //or callback
+        CoreManager.shared.purchase(purchase, promo) { result in
             
         }
     }
