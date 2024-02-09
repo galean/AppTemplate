@@ -10,6 +10,7 @@ import CoreIntegrations
 import FirebaseIntegration
 import AnalyticsIntegration
 
+@main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     let appEnvironment = AppEnvironment.bootstrap()
     
