@@ -14,5 +14,16 @@ public enum PaywallConfig: String, CaseIterable, CorePaywallConfiguration {
     case ct_vap_2 = "clear_trial_vap"
     case ct_vap_3 = "ct_vap_3"
     
-    public var id: String { return rawValue }
+    public var id: String {
+        return rawValue
+    }
+    
+    static var activePaywall: PaywallConfig {
+        let activePaywall = AppCoreManager.shared.configurationResult?.activePaywallName ?? PaywallConfig.defaultPaywall.rawValue
+        return PaywallConfig.allCases.first(where: {$0.id == activePaywall}) ?? PaywallConfig.defaultPaywall
+    }
+    
+    static var defaultPaywall: PaywallConfig {
+        return .ct_vap_1
+    }
 }

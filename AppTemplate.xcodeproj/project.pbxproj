@@ -7,48 +7,81 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7CF56B682B7664A500F6FD01 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF56B672B7664A500F6FD01 /* BaseCoordinator.swift */; };
+		7CF56B6A2B7664C000F6FD01 /* Drawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF56B692B7664C000F6FD01 /* Drawable.swift */; };
+		7CF56B6C2B7664CC00F6FD01 /* ModalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF56B6B2B7664CB00F6FD01 /* ModalRouter.swift */; };
+		7CF56B6E2B7664DB00F6FD01 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF56B6D2B7664DB00F6FD01 /* Router.swift */; };
+		7CF56B712B76651A00F6FD01 /* WebViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF56B702B76651A00F6FD01 /* WebViewCoordinator.swift */; };
+		7CF56B732B76652800F6FD01 /* WebViewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF56B722B76652800F6FD01 /* WebViewView.swift */; };
+		7CF56B752B76653C00F6FD01 /* WebViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF56B742B76653C00F6FD01 /* WebViewViewModel.swift */; };
+		7CF56B772B76658200F6FD01 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF56B762B76658200F6FD01 /* SwiftUIView.swift */; };
+		7CF56B812B7666E300F6FD01 /* EmptyPaywallViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF56B7C2B7666E300F6FD01 /* EmptyPaywallViewModel.swift */; };
+		7CF56B822B7666E300F6FD01 /* EmptyPaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF56B7D2B7666E300F6FD01 /* EmptyPaywallView.swift */; };
+		7CF56B832B7666E300F6FD01 /* EmptyPaywallCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF56B7E2B7666E300F6FD01 /* EmptyPaywallCoordinator.swift */; };
+		7CF56B852B76672800F6FD01 /* PaywallFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF56B842B76672800F6FD01 /* PaywallFactory.swift */; };
+		7CF56B872B76683B00F6FD01 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF56B862B76683B00F6FD01 /* Constants.swift */; };
+		7CF56B892B7678CF00F6FD01 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF56B882B7678CF00F6FD01 /* AppCoordinator.swift */; };
+		7CF56B922B7678EB00F6FD01 /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF56B8D2B7678EB00F6FD01 /* LaunchViewModel.swift */; };
+		7CF56B932B7678EB00F6FD01 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF56B8E2B7678EB00F6FD01 /* LaunchView.swift */; };
+		7CF56B942B7678EB00F6FD01 /* LaunchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF56B8F2B7678EB00F6FD01 /* LaunchCoordinator.swift */; };
+		7CF56B972B76799A00F6FD01 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF56B962B76799A00F6FD01 /* AppEnvironment.swift */; };
+		7CF56B992B7679B600F6FD01 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF56B982B7679B600F6FD01 /* DIContainer.swift */; };
+		7CF56B9B2B767A8E00F6FD01 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF56B9A2B767A8E00F6FD01 /* SceneDelegate.swift */; };
+		7CF56B9E2B767B6100F6FD01 /* AlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF56B9D2B767B6100F6FD01 /* AlertViewModel.swift */; };
+		7CF56BA02B767B7000F6FD01 /* ConfirmDialogModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF56B9F2B767B7000F6FD01 /* ConfirmDialogModifier.swift */; };
+		7CF56BA22B767BFD00F6FD01 /* WebViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF56BA12B767BFD00F6FD01 /* WebViewWrapper.swift */; };
+		7CF56BA42B767C3200F6FD01 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF56BA32B767C3200F6FD01 /* UIApplication.swift */; };
 		AB2998832AFE3D9F00A0D5E3 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2998822AFE3D9F00A0D5E3 /* Array.swift */; };
-		AB2998852AFE3F5C00A0D5E3 /* PaywallFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2998842AFE3F5C00A0D5E3 /* PaywallFactory.swift */; };
-		AB2998892AFE3FE800A0D5E3 /* Paywall_A.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2998882AFE3FE800A0D5E3 /* Paywall_A.swift */; };
-		AB29988B2AFE402E00A0D5E3 /* Paywall_B.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB29988A2AFE402E00A0D5E3 /* Paywall_B.swift */; };
-		AB29988D2AFE40D100A0D5E3 /* Paywall_UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB29988C2AFE40D100A0D5E3 /* Paywall_UIKit.swift */; };
 		ABEDFA102B036C3400C29C6C /* PaywallConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDFA0F2B036C3400C29C6C /* PaywallConfig.swift */; };
-		ABEDFA122B03DC5700C29C6C /* PaywallViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDFA112B03DC5700C29C6C /* PaywallViewProtocol.swift */; };
 		ABEDFA142B051C0500C29C6C /* PaywallDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDFA132B051C0500C29C6C /* PaywallDataSource.swift */; };
 		ABEDFA192B0625B700C29C6C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ABEDFA182B0625B700C29C6C /* GoogleService-Info.plist */; };
 		C72BBA802AD96F3D00AB1E87 /* CoreIntegrations in Frameworks */ = {isa = PBXBuildFile; productRef = C72BBA7F2AD96F3D00AB1E87 /* CoreIntegrations */; };
-		C72FB0B129A37F6300F8DEEF /* AppTemplateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72FB0B029A37F6300F8DEEF /* AppTemplateApp.swift */; };
-		C72FB0B329A37F6300F8DEEF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72FB0B229A37F6300F8DEEF /* ContentView.swift */; };
 		C72FB0B529A37F6500F8DEEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C72FB0B429A37F6500F8DEEF /* Assets.xcassets */; };
 		C72FB0B829A37F6500F8DEEF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C72FB0B729A37F6500F8DEEF /* Preview Assets.xcassets */; };
 		C72FB0BF29A3919000F8DEEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72FB0BE29A3919000F8DEEF /* AppDelegate.swift */; };
 		C72FB0DF29A3A2DF00F8DEEF /* AppCoreSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72FB0DE29A3A2DF00F8DEEF /* AppCoreSettings.swift */; };
 		C72FB0E129A3BC1000F8DEEF /* UDStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72FB0E029A3BC1000F8DEEF /* UDStorage.swift */; };
 		C75CFA9F2ADD33F2009D5B28 /* AttDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75CFA9E2ADD33F2009D5B28 /* AttDataSource.swift */; };
-		C779D9752ACB0AD700EAABB1 /* CoreIntegrations in Frameworks */ = {isa = PBXBuildFile; productRef = C779D9742ACB0AD700EAABB1 /* CoreIntegrations */; };
 		C779D9772ACC197D00EAABB1 /* AppCoreConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779D9762ACC197D00EAABB1 /* AppCoreConfiguration.swift */; };
 		C779D9792ACC19B900EAABB1 /* AppAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779D9782ACC19B900EAABB1 /* AppAnalytics.swift */; };
 		C779D97B2ACC19E700EAABB1 /* AppRemoteConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C779D97A2ACC19E700EAABB1 /* AppRemoteConfig.swift */; };
 		C79D96012A3C61010071C58E /* PaywallState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79D96002A3C61010071C58E /* PaywallState.swift */; };
 		C79D96092A3C62F80071C58E /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79D96082A3C62F80071C58E /* Dictionary.swift */; };
-		C79D960B2A3C630A0071C58E /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79D960A2A3C630A0071C58E /* LaunchView.swift */; };
 		C7F2EB832AD681FA00D2BC00 /* AppCoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F2EB822AD681FA00D2BC00 /* AppCoreManager.swift */; };
 		C7F2EB882AD88BE300D2BC00 /* AppConfigurationEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F2EB872AD88BE300D2BC00 /* AppConfigurationEvents.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7CF56B672B7664A500F6FD01 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		7CF56B692B7664C000F6FD01 /* Drawable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawable.swift; sourceTree = "<group>"; };
+		7CF56B6B2B7664CB00F6FD01 /* ModalRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalRouter.swift; sourceTree = "<group>"; };
+		7CF56B6D2B7664DB00F6FD01 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		7CF56B702B76651A00F6FD01 /* WebViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewCoordinator.swift; sourceTree = "<group>"; };
+		7CF56B722B76652800F6FD01 /* WebViewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewView.swift; sourceTree = "<group>"; };
+		7CF56B742B76653C00F6FD01 /* WebViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewModel.swift; sourceTree = "<group>"; };
+		7CF56B762B76658200F6FD01 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		7CF56B7C2B7666E300F6FD01 /* EmptyPaywallViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPaywallViewModel.swift; sourceTree = "<group>"; };
+		7CF56B7D2B7666E300F6FD01 /* EmptyPaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPaywallView.swift; sourceTree = "<group>"; };
+		7CF56B7E2B7666E300F6FD01 /* EmptyPaywallCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPaywallCoordinator.swift; sourceTree = "<group>"; };
+		7CF56B842B76672800F6FD01 /* PaywallFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallFactory.swift; sourceTree = "<group>"; };
+		7CF56B862B76683B00F6FD01 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7CF56B882B7678CF00F6FD01 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		7CF56B8D2B7678EB00F6FD01 /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
+		7CF56B8E2B7678EB00F6FD01 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
+		7CF56B8F2B7678EB00F6FD01 /* LaunchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCoordinator.swift; sourceTree = "<group>"; };
+		7CF56B962B76799A00F6FD01 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		7CF56B982B7679B600F6FD01 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		7CF56B9A2B767A8E00F6FD01 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		7CF56B9D2B767B6100F6FD01 /* AlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewModel.swift; sourceTree = "<group>"; };
+		7CF56B9F2B767B7000F6FD01 /* ConfirmDialogModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmDialogModifier.swift; sourceTree = "<group>"; };
+		7CF56BA12B767BFD00F6FD01 /* WebViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewWrapper.swift; sourceTree = "<group>"; };
+		7CF56BA32B767C3200F6FD01 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		7CF56BA52B767CC200F6FD01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AB2998822AFE3D9F00A0D5E3 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
-		AB2998842AFE3F5C00A0D5E3 /* PaywallFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallFactory.swift; sourceTree = "<group>"; };
-		AB2998882AFE3FE800A0D5E3 /* Paywall_A.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paywall_A.swift; sourceTree = "<group>"; };
-		AB29988A2AFE402E00A0D5E3 /* Paywall_B.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paywall_B.swift; sourceTree = "<group>"; };
-		AB29988C2AFE40D100A0D5E3 /* Paywall_UIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paywall_UIKit.swift; sourceTree = "<group>"; };
 		ABEDFA0F2B036C3400C29C6C /* PaywallConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallConfig.swift; sourceTree = "<group>"; };
-		ABEDFA112B03DC5700C29C6C /* PaywallViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallViewProtocol.swift; sourceTree = "<group>"; };
 		ABEDFA132B051C0500C29C6C /* PaywallDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallDataSource.swift; sourceTree = "<group>"; };
 		ABEDFA182B0625B700C29C6C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C72FB0AD29A37F6300F8DEEF /* AppTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C72FB0B029A37F6300F8DEEF /* AppTemplateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTemplateApp.swift; sourceTree = "<group>"; };
-		C72FB0B229A37F6300F8DEEF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C72FB0B429A37F6500F8DEEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C72FB0B729A37F6500F8DEEF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C72FB0BE29A3919000F8DEEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,7 +93,6 @@
 		C779D97A2ACC19E700EAABB1 /* AppRemoteConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRemoteConfig.swift; sourceTree = "<group>"; };
 		C79D96002A3C61010071C58E /* PaywallState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallState.swift; sourceTree = "<group>"; };
 		C79D96082A3C62F80071C58E /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
-		C79D960A2A3C630A0071C58E /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		C7F2EB822AD681FA00D2BC00 /* AppCoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoreManager.swift; sourceTree = "<group>"; };
 		C7F2EB872AD88BE300D2BC00 /* AppConfigurationEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurationEvents.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,21 +103,77 @@
 			buildActionMask = 2147483647;
 			files = (
 				C72BBA802AD96F3D00AB1E87 /* CoreIntegrations in Frameworks */,
-				C779D9752ACB0AD700EAABB1 /* CoreIntegrations in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7CF56B662B76648700F6FD01 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				7CF56B672B7664A500F6FD01 /* BaseCoordinator.swift */,
+				7CF56B692B7664C000F6FD01 /* Drawable.swift */,
+				7CF56B6B2B7664CB00F6FD01 /* ModalRouter.swift */,
+				7CF56B6D2B7664DB00F6FD01 /* Router.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		7CF56B6F2B76650900F6FD01 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				7CF56B702B76651A00F6FD01 /* WebViewCoordinator.swift */,
+				7CF56B722B76652800F6FD01 /* WebViewView.swift */,
+				7CF56B742B76653C00F6FD01 /* WebViewViewModel.swift */,
+				7CF56BA12B767BFD00F6FD01 /* WebViewWrapper.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		7CF56B792B7666C600F6FD01 /* EmptyPaywall */ = {
+			isa = PBXGroup;
+			children = (
+				7CF56B7C2B7666E300F6FD01 /* EmptyPaywallViewModel.swift */,
+				7CF56B7D2B7666E300F6FD01 /* EmptyPaywallView.swift */,
+				7CF56B7E2B7666E300F6FD01 /* EmptyPaywallCoordinator.swift */,
+			);
+			path = EmptyPaywall;
+			sourceTree = "<group>";
+		};
+		7CF56B8A2B7678DF00F6FD01 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				7CF56B8D2B7678EB00F6FD01 /* LaunchViewModel.swift */,
+				7CF56B8E2B7678EB00F6FD01 /* LaunchView.swift */,
+				7CF56B8F2B7678EB00F6FD01 /* LaunchCoordinator.swift */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		7CF56B952B76798300F6FD01 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				7CF56B962B76799A00F6FD01 /* AppEnvironment.swift */,
+				7CF56B982B7679B600F6FD01 /* DIContainer.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		7CF56B9C2B767B5800F6FD01 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				7CF56B9D2B767B6100F6FD01 /* AlertViewModel.swift */,
+				7CF56B9F2B767B7000F6FD01 /* ConfirmDialogModifier.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
 		AB2998902AFE532800A0D5E3 /* Paywalls */ = {
 			isa = PBXGroup;
 			children = (
-				AB2998842AFE3F5C00A0D5E3 /* PaywallFactory.swift */,
-				ABEDFA112B03DC5700C29C6C /* PaywallViewProtocol.swift */,
-				AB2998882AFE3FE800A0D5E3 /* Paywall_A.swift */,
-				AB29988A2AFE402E00A0D5E3 /* Paywall_B.swift */,
-				AB29988C2AFE40D100A0D5E3 /* Paywall_UIKit.swift */,
+				7CF56B792B7666C600F6FD01 /* EmptyPaywall */,
+				7CF56B842B76672800F6FD01 /* PaywallFactory.swift */,
 			);
 			path = Paywalls;
 			sourceTree = "<group>";
@@ -112,9 +200,11 @@
 		C72FB0AF29A37F6300F8DEEF /* AppTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				7CF56BA52B767CC200F6FD01 /* Info.plist */,
 				C72FB0E429A3CCE100F8DEEF /* Core */,
 				C72FB0E629A3CD1D00F8DEEF /* AppContent */,
 				C72FB0E529A3CCFB00F8DEEF /* Common */,
+				7CF56B952B76798300F6FD01 /* Services */,
 				C72FB0B429A37F6500F8DEEF /* Assets.xcassets */,
 				C72FB0B629A37F6500F8DEEF /* Preview Content */,
 			);
@@ -132,17 +222,18 @@
 		C72FB0E429A3CCE100F8DEEF /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				C72FB0B029A37F6300F8DEEF /* AppTemplateApp.swift */,
-				C72FB0BE29A3919000F8DEEF /* AppDelegate.swift */,
-				C7F2EB822AD681FA00D2BC00 /* AppCoreManager.swift */,
-				C779D9762ACC197D00EAABB1 /* AppCoreConfiguration.swift */,
-				C7F2EB872AD88BE300D2BC00 /* AppConfigurationEvents.swift */,
 				C779D9782ACC19B900EAABB1 /* AppAnalytics.swift */,
-				C75CFA9E2ADD33F2009D5B28 /* AttDataSource.swift */,
-				C779D97A2ACC19E700EAABB1 /* AppRemoteConfig.swift */,
+				C7F2EB872AD88BE300D2BC00 /* AppConfigurationEvents.swift */,
+				7CF56B882B7678CF00F6FD01 /* AppCoordinator.swift */,
+				C779D9762ACC197D00EAABB1 /* AppCoreConfiguration.swift */,
+				C7F2EB822AD681FA00D2BC00 /* AppCoreManager.swift */,
 				C72FB0DE29A3A2DF00F8DEEF /* AppCoreSettings.swift */,
-				ABEDFA132B051C0500C29C6C /* PaywallDataSource.swift */,
+				C72FB0BE29A3919000F8DEEF /* AppDelegate.swift */,
+				C779D97A2ACC19E700EAABB1 /* AppRemoteConfig.swift */,
+				C75CFA9E2ADD33F2009D5B28 /* AttDataSource.swift */,
 				ABEDFA0F2B036C3400C29C6C /* PaywallConfig.swift */,
+				ABEDFA132B051C0500C29C6C /* PaywallDataSource.swift */,
+				7CF56B9A2B767A8E00F6FD01 /* SceneDelegate.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -150,9 +241,13 @@
 		C72FB0E529A3CCFB00F8DEEF /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				C72FB0EA29A3CDD700F8DEEF /* Helpers */,
-				C72FB0E929A3CD7D00F8DEEF /* Subscription */,
+				7CF56B862B76683B00F6FD01 /* Constants.swift */,
+				7CF56B662B76648700F6FD01 /* Coordinator */,
 				C79D96072A3C62E40071C58E /* Extensions */,
+				C72FB0EA29A3CDD700F8DEEF /* Helpers */,
+				7CF56B9C2B767B5800F6FD01 /* Modifiers */,
+				C72FB0E929A3CD7D00F8DEEF /* Subscription */,
+				7CF56B6F2B76650900F6FD01 /* WebView */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -160,8 +255,7 @@
 		C72FB0E629A3CD1D00F8DEEF /* AppContent */ = {
 			isa = PBXGroup;
 			children = (
-				C79D960A2A3C630A0071C58E /* LaunchView.swift */,
-				C72FB0B229A37F6300F8DEEF /* ContentView.swift */,
+				7CF56B8A2B7678DF00F6FD01 /* Launch */,
 				AB2998902AFE532800A0D5E3 /* Paywalls */,
 			);
 			path = AppContent;
@@ -210,6 +304,8 @@
 			children = (
 				C79D96082A3C62F80071C58E /* Dictionary.swift */,
 				AB2998822AFE3D9F00A0D5E3 /* Array.swift */,
+				7CF56B762B76658200F6FD01 /* SwiftUIView.swift */,
+				7CF56BA32B767C3200F6FD01 /* UIApplication.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -228,11 +324,9 @@
 			buildRules = (
 			);
 			dependencies = (
-				C779D9722ACB0AD400EAABB1 /* PBXTargetDependency */,
 			);
 			name = AppTemplate;
 			packageProductDependencies = (
-				C779D9742ACB0AD700EAABB1 /* CoreIntegrations */,
 				C72BBA7F2AD96F3D00AB1E87 /* CoreIntegrations */,
 			);
 			productName = AppTemplate;
@@ -293,39 +387,48 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB2998892AFE3FE800A0D5E3 /* Paywall_A.swift in Sources */,
-				AB29988B2AFE402E00A0D5E3 /* Paywall_B.swift in Sources */,
 				C79D96012A3C61010071C58E /* PaywallState.swift in Sources */,
-				C79D960B2A3C630A0071C58E /* LaunchView.swift in Sources */,
-				ABEDFA122B03DC5700C29C6C /* PaywallViewProtocol.swift in Sources */,
+				7CF56B932B7678EB00F6FD01 /* LaunchView.swift in Sources */,
+				7CF56B6A2B7664C000F6FD01 /* Drawable.swift in Sources */,
+				7CF56B9E2B767B6100F6FD01 /* AlertViewModel.swift in Sources */,
+				7CF56B832B7666E300F6FD01 /* EmptyPaywallCoordinator.swift in Sources */,
+				7CF56B732B76652800F6FD01 /* WebViewView.swift in Sources */,
 				C75CFA9F2ADD33F2009D5B28 /* AttDataSource.swift in Sources */,
+				7CF56BA02B767B7000F6FD01 /* ConfirmDialogModifier.swift in Sources */,
+				7CF56BA42B767C3200F6FD01 /* UIApplication.swift in Sources */,
+				7CF56B822B7666E300F6FD01 /* EmptyPaywallView.swift in Sources */,
+				7CF56B852B76672800F6FD01 /* PaywallFactory.swift in Sources */,
+				7CF56B752B76653C00F6FD01 /* WebViewViewModel.swift in Sources */,
+				7CF56B892B7678CF00F6FD01 /* AppCoordinator.swift in Sources */,
+				7CF56BA22B767BFD00F6FD01 /* WebViewWrapper.swift in Sources */,
 				ABEDFA142B051C0500C29C6C /* PaywallDataSource.swift in Sources */,
 				C779D9772ACC197D00EAABB1 /* AppCoreConfiguration.swift in Sources */,
 				C72FB0BF29A3919000F8DEEF /* AppDelegate.swift in Sources */,
+				7CF56B872B76683B00F6FD01 /* Constants.swift in Sources */,
+				7CF56B6C2B7664CC00F6FD01 /* ModalRouter.swift in Sources */,
+				7CF56B9B2B767A8E00F6FD01 /* SceneDelegate.swift in Sources */,
 				C7F2EB882AD88BE300D2BC00 /* AppConfigurationEvents.swift in Sources */,
-				C72FB0B329A37F6300F8DEEF /* ContentView.swift in Sources */,
+				7CF56B772B76658200F6FD01 /* SwiftUIView.swift in Sources */,
+				7CF56B942B7678EB00F6FD01 /* LaunchCoordinator.swift in Sources */,
+				7CF56B6E2B7664DB00F6FD01 /* Router.swift in Sources */,
 				C72FB0E129A3BC1000F8DEEF /* UDStorage.swift in Sources */,
 				AB2998832AFE3D9F00A0D5E3 /* Array.swift in Sources */,
-				AB2998852AFE3F5C00A0D5E3 /* PaywallFactory.swift in Sources */,
+				7CF56B812B7666E300F6FD01 /* EmptyPaywallViewModel.swift in Sources */,
+				7CF56B992B7679B600F6FD01 /* DIContainer.swift in Sources */,
 				ABEDFA102B036C3400C29C6C /* PaywallConfig.swift in Sources */,
+				7CF56B922B7678EB00F6FD01 /* LaunchViewModel.swift in Sources */,
 				C7F2EB832AD681FA00D2BC00 /* AppCoreManager.swift in Sources */,
+				7CF56B682B7664A500F6FD01 /* BaseCoordinator.swift in Sources */,
 				C79D96092A3C62F80071C58E /* Dictionary.swift in Sources */,
-				AB29988D2AFE40D100A0D5E3 /* Paywall_UIKit.swift in Sources */,
 				C72FB0DF29A3A2DF00F8DEEF /* AppCoreSettings.swift in Sources */,
+				7CF56B712B76651A00F6FD01 /* WebViewCoordinator.swift in Sources */,
 				C779D9792ACC19B900EAABB1 /* AppAnalytics.swift in Sources */,
 				C779D97B2ACC19E700EAABB1 /* AppRemoteConfig.swift in Sources */,
-				C72FB0B129A37F6300F8DEEF /* AppTemplateApp.swift in Sources */,
+				7CF56B972B76799A00F6FD01 /* AppEnvironment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		C779D9722ACB0AD400EAABB1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = C779D9712ACB0AD400EAABB1 /* CoreIntegrations */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		C72FB0B929A37F6500F8DEEF /* Debug */ = {
@@ -450,11 +553,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"AppTemplate/Preview Content\"";
-				DEVELOPMENT_TEAM = 9VPMTNC87M;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AppTemplate/Info.plist;
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "йцуйцуйцу";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -484,11 +587,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"AppTemplate/Preview Content\"";
-				DEVELOPMENT_TEAM = 9VPMTNC87M;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AppTemplate/Info.plist;
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "йцуйцуйцу";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -548,14 +651,6 @@
 		C72BBA7F2AD96F3D00AB1E87 /* CoreIntegrations */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C72BBA7E2AD96F3D00AB1E87 /* XCRemoteSwiftPackageReference "CoreIntegrations" */;
-			productName = CoreIntegrations;
-		};
-		C779D9712ACB0AD400EAABB1 /* CoreIntegrations */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = CoreIntegrations;
-		};
-		C779D9742ACB0AD700EAABB1 /* CoreIntegrations */ = {
-			isa = XCSwiftPackageProductDependency;
 			productName = CoreIntegrations;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -11,6 +11,8 @@ import FirebaseIntegration
 import AnalyticsIntegration
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    let appEnvironment = AppEnvironment.bootstrap()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         defaultConfiguration(application, didFinishLaunchingWithOptions: launchOptions)
         return true
