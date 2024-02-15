@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB1309342B7CC06C0035588B /* PurchaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1309332B7CC06C0035588B /* PurchaseViewModel.swift */; };
 		AB2998832AFE3D9F00A0D5E3 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2998822AFE3D9F00A0D5E3 /* Array.swift */; };
 		AB2998852AFE3F5C00A0D5E3 /* PaywallFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2998842AFE3F5C00A0D5E3 /* PaywallFactory.swift */; };
 		AB2998892AFE3FE800A0D5E3 /* Paywall_A.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2998882AFE3FE800A0D5E3 /* Paywall_A.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB1309332B7CC06C0035588B /* PurchaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseViewModel.swift; sourceTree = "<group>"; };
 		AB2998822AFE3D9F00A0D5E3 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		AB2998842AFE3F5C00A0D5E3 /* PaywallFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallFactory.swift; sourceTree = "<group>"; };
 		AB2998882AFE3FE800A0D5E3 /* Paywall_A.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paywall_A.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		AB2998902AFE532800A0D5E3 /* Paywalls */ = {
 			isa = PBXGroup;
 			children = (
+				AB1309332B7CC06C0035588B /* PurchaseViewModel.swift */,
 				AB2998842AFE3F5C00A0D5E3 /* PaywallFactory.swift */,
 				ABEDFA112B03DC5700C29C6C /* PaywallViewProtocol.swift */,
 				AB2998882AFE3FE800A0D5E3 /* Paywall_A.swift */,
@@ -299,6 +302,7 @@
 				C779D9772ACC197D00EAABB1 /* AppCoreConfiguration.swift in Sources */,
 				C72FB0BF29A3919000F8DEEF /* AppDelegate.swift in Sources */,
 				C7F2EB882AD88BE300D2BC00 /* AppConfigurationEvents.swift in Sources */,
+				AB1309342B7CC06C0035588B /* PurchaseViewModel.swift in Sources */,
 				C72FB0B329A37F6300F8DEEF /* ContentView.swift in Sources */,
 				C72FB0E129A3BC1000F8DEEF /* UDStorage.swift in Sources */,
 				AB2998832AFE3D9F00A0D5E3 /* Array.swift in Sources */,
@@ -534,7 +538,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/galean/CoreIntegrations";
 			requirement = {
-				branch = feature/promo_sk2;
+				branch = feature/storekit2;
 				kind = branch;
 			};
 		};

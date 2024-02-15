@@ -8,6 +8,7 @@
 import UIKit
 import SwiftUI
 import CoreIntegrations
+import Combine
 
 class Paywall_UIKit: UIViewController, PaywallViewProtocol {
     
@@ -41,8 +42,9 @@ class Paywall_UIKit: UIViewController, PaywallViewProtocol {
         button.addTarget(self, action: #selector(subscribeAction), for: .touchUpInside)
         return button
     }()
-        
-    var purchases: [Purchase] = []
+    
+    let viewModel: PurchaseViewModel = PurchaseViewModel()
+    var cancellables: Set<AnyCancellable> = []
     
     let paywallConfig: PaywallConfig = .ct_vap_3
     var closeResult: PaywallResultClosure? = nil
@@ -54,16 +56,13 @@ class Paywall_UIKit: UIViewController, PaywallViewProtocol {
         
         setupViews()
         
-        paywallConfig.purchases { result in
-            switch result {
-            case .success(let purchases):
-                self.purchases = purchases
-            case .error(let error):
-                print("paywallConfig.purchases error \(error)")
+        viewModel.objectWillChange.sink { [weak self] in
+            guard let self = self else {
+                return
             }
-            
-        }
+        }.store(in: &cancellables)
         
+        viewModel.setup(with: paywallConfig)
     }
     
     private func setupViews() {
@@ -107,7 +106,7 @@ class Paywall_UIKit: UIViewController, PaywallViewProtocol {
     private func purchase(_ purchase: Purchase) {
         AppAnalyticsEvents.subscription_subscribe_clicked.log()
         
-        CoreManager.shared.purchase(purchase) { result in
+        viewModel.purchase(purchase: purchase, source: paywallConfig.id) { status, error in
             
         }
     }
@@ -115,7 +114,7 @@ class Paywall_UIKit: UIViewController, PaywallViewProtocol {
     private func restore() {
         AppAnalyticsEvents.subscription_restore_clicked.log()
         
-        CoreManager.shared.restorePremium { result in
+        viewModel.restore { status, message in
             
         }
     }

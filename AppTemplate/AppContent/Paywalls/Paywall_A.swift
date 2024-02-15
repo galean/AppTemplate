@@ -10,8 +10,8 @@ import CoreIntegrations
 
 struct Paywall_A: View, PaywallViewProtocol {
    
+    @StateObject var purchaseVM = PurchaseViewModel()
     @Environment(\.dismiss) var dismiss
-    @State var purchases: [Purchase] = []
     
     let paywallConfig:PaywallConfig = .ct_vap_1
     let screenSource: String
@@ -30,7 +30,7 @@ struct Paywall_A: View, PaywallViewProtocol {
             
             Text("Hello, Paywall_A!")
       
-            ForEach(purchases, id: \.self){ purchase in
+            ForEach(purchaseVM.purchases, id: \.identifier){ purchase in
                 Text("Subscribe for: \(purchase.localisedPrice)/\(purchase.periodString)")
             }
             
@@ -46,42 +46,30 @@ struct Paywall_A: View, PaywallViewProtocol {
         .onAppear {
             AppAnalyticsEvents.subscription_shown.log(parameters: ["id":paywallConfig.id])
             
-            paywallConfig.purchases { result in
-                switch result {
-                case .success(let purchases):
-                    self.purchases = purchases
-                case .error(let error):
-                    print("paywallConfig.purchases error \(error)")
-                }
-                
-            }
-            
-            //get promo offers async
-            Task {
-                let promoOffers = await paywallConfig.promoOffers(for:self.purchases.first!)
-            }
+            purchaseVM.setup(with: paywallConfig)
         }
           
     }
     
-    private func purchase(_ purchase: Purchase, _ promo: PromoOffer) {
+    private func purchase(_ purchase: Purchase) {
         AppAnalyticsEvents.subscription_subscribe_clicked.log()
         
-        //async
-        Task {
-            let purchase = await CoreManager.shared.purchase(purchase, promo)
-        }
-        //or callback
-        CoreManager.shared.purchase(purchase, promo) { result in
-            
+        purchaseVM.purchase(purchase: purchase, source: paywallConfig.id) { status, error in
+            if status {
+                //show success
+            }else{
+                //show error
+            }
         }
     }
     
     private func restore() {
         AppAnalyticsEvents.subscription_restore_clicked.log()
         
-        CoreManager.shared.restorePremium { result in
-            
+        purchaseVM.restore { status, message in
+            if status {
+                //show success
+            }
         }
     }
 }

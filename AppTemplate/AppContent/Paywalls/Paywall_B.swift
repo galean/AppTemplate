@@ -10,6 +10,7 @@ import CoreIntegrations
 
 struct Paywall_B: View, PaywallViewProtocol {
     
+    @StateObject var purchaseVM = PurchaseViewModel()
     @Environment(\.dismiss) var dismiss
     @State var purchases: [Purchase] = []
     
@@ -46,31 +47,29 @@ struct Paywall_B: View, PaywallViewProtocol {
         .onAppear {
             AppAnalyticsEvents.subscription_shown.log(parameters: ["id":paywallConfig.id])
             
-            paywallConfig.purchases { result in
-                switch result {
-                case .success(let purchases):
-                    self.purchases = purchases
-                case .error(let error):
-                    print("paywallConfig.purchases error \(error)")
-                }
-                
-            }
+            purchaseVM.setup(with: paywallConfig)
         }
     }
     
     private func purchase(_ purchase: Purchase) {
         AppAnalyticsEvents.subscription_subscribe_clicked.log()
         
-        CoreManager.shared.purchase(purchase) { result in
-            
+        purchaseVM.purchase(purchase: purchase, source: paywallConfig.id) { status, error in
+            if status {
+                //show success
+            }else{
+                //show error
+            }
         }
     }
     
     private func restore() {
         AppAnalyticsEvents.subscription_restore_clicked.log()
         
-        CoreManager.shared.restorePremium { result in
-            
+        purchaseVM.restore { status, message in
+            if status {
+                //show success
+            }
         }
     }
 }
