@@ -10,4 +10,9 @@ import CoreIntegrations
 
 struct PaywallDataSource: CorePaywallDataSource {
     typealias PaywallInitialConfiguration = PaywallConfig
+    typealias PurchaseGroup = AppPurchaseGroup
+}
+
+public enum AppPurchaseGroup: CorePurchaseGroup {
+    case Pro
 }

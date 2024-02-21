@@ -44,4 +44,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         CoreManager.shared.application(application, didReceiveRemoteNotification: userInfo,
                                        fetchCompletionHandler: completionHandler)
     }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        Task {
+            let result = await CoreManager.shared.verifyPremium()
+            switch result {
+            case .premium(let purchase):
+                print("UserDefaults.standard.isSubscribed = true")
+            case .notPremium:
+                print("UserDefaults.standard.isSubscribed = false")
+            }
+        }
+        //or PurchaseViewModel.shared.verifyPremium()
+    }
+    
 }

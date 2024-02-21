@@ -17,18 +17,24 @@ enum RemoteABTests: String, CoreRemoteABTestable {
 
     var activeForSources: [CoreUserSource] {
         switch self {
-        case .ab_paywall_general:
-            return [.organic, .asa]
-        case .ab_paywall_fb_google:
-            return [.fbgoogle]
-        case .ab_paywall_ct_vap_3,
-                .special_offer_shown:
+        case .ab_paywall_fb:
+            return [.facebook]
+        case .ab_paywall_google:
+            return [.google]
+        case .ab_paywall_asa:
+            return [.asa]
+        case .ab_paywall_organic:
+            return [.organic]
+        case .ab_paywall_ct_vap_3, .special_offer_shown:
             return CoreUserSource.allCases.except(.ipat)
         }
     }
     
-    case ab_paywall_general
-    case ab_paywall_fb_google
+    case ab_paywall_fb
+    case ab_paywall_google
+    case ab_paywall_asa
+    case ab_paywall_organic
+    
     case ab_paywall_ct_vap_3
     case special_offer_shown
     
@@ -36,9 +42,13 @@ enum RemoteABTests: String, CoreRemoteABTestable {
   
     var defaultValue: String {
         switch self {
-        case .ab_paywall_general:
+        case .ab_paywall_fb:
             return "none"
-        case .ab_paywall_fb_google:
+        case .ab_paywall_google:
+            return "none"
+        case .ab_paywall_asa:
+            return "none"
+        case .ab_paywall_organic:
             return "none"
         case .ab_paywall_ct_vap_3:
             return "none"

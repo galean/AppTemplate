@@ -41,8 +41,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/galean/CoreIntegrations",
       "state" : {
-        "branch" : "feature/storekit2",
-        "revision" : "aba4382fe2327d53515a8e61080ebfa8e0f584e7"
+        "branch" : "main",
+        "revision" : "5a4daafaffeffe85bd34a4e70fb43e36d56069c0"
       }
     },
     {
