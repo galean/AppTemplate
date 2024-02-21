@@ -42,7 +42,7 @@
       "location" : "https://github.com/galean/CoreIntegrations",
       "state" : {
         "branch" : "main",
-        "revision" : "f1d4006de76c84ccae852454188b394d1cc9794a"
+        "revision" : "5a4daafaffeffe85bd34a4e70fb43e36d56069c0"
       }
     },
     {
@@ -151,15 +151,6 @@
       "state" : {
         "revision" : "3c54ab05249f59f2c6641dd2920b8358ea9ed127",
         "version" : "1.24.0"
-      }
-    },
-    {
-      "identity" : "swiftystorekit",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/bizz84/SwiftyStoreKit.git",
-      "state" : {
-        "branch" : "master",
-        "revision" : "48d4d4c0b6a66732eb45e2f0104fb7d080c67a69"
       }
     }
   ],
