@@ -13,7 +13,7 @@ enum AppPurchaseGroup: String, CorePurchaseGroup {
 }
 
 enum AppPurchaseIdentifier: String, CorePurchaseIdentifier {
-    var purchaseGroup: any CoreIntegrations.CorePurchaseGroup {
+    var purchaseGroup: any CorePurchaseGroup {
         return AppPurchaseGroup.Pro
     }
     
@@ -21,7 +21,7 @@ enum AppPurchaseIdentifier: String, CorePurchaseIdentifier {
 //        //by default return main subscription group - Pro
 //        return .Pro
 //        
-//        //return different group for each subscription
+//        //return different group for each subscription if you have several groups in the app
 //        /*
 //        switch self {
 //        case .annual_34_99:
