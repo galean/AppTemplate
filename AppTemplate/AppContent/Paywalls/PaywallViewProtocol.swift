@@ -7,6 +7,6 @@
 
 import Foundation
 
-public protocol PaywallViewProtocol {
+protocol PaywallViewProtocol {
     var paywallConfig: PaywallConfig { get }
 }

@@ -32,7 +32,7 @@ struct Paywall_B: View, PaywallViewProtocol {
             Text("Hello, Paywall_B!")
             
             ForEach(purchases, id: \.self){ purchase in
-                Text("Subscribe for: \(purchase.localisedPrice)/\(purchase.periodString)")
+                Text("Subscribe for: \(purchase.localizedPrice)/\(purchase.periodString)")
             }
             
             Spacer()
