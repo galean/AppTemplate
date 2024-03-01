@@ -46,7 +46,7 @@ public enum AppPurchaseIdentifier: String, CorePurchaseIdentifier {
 //        }
 //         */
 //    }
-    var id: String { return rawValue }
+    public var id: String { return rawValue }
     
     case annual_34_99 = "annual.34.99"
     case weekly_9_99 = "week.9.99"
