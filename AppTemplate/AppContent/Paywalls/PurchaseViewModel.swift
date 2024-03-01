@@ -49,13 +49,15 @@ class PurchaseViewModel: ObservableObject {
         Task {
             let result = await CoreManager.shared.restore()
             switch result {
-            case .restore(let consumables, let nonConsumables, let subscriptions, let nonRenewables):
+            case .restore(let purchases):
                 print("")
-                if let lifetime = nonConsumables.first(where: {$0.identifier == "lifetime.99.99"}) {
-                    //                UserDefaults.standard.isSubscribed = true
+                if !purchases.isEmpty {
+                    if let lifetime = purchases.first(where: {$0.identifier == "lifetime.99.99"}) {
+                        //                UserDefaults.standard.isSubscribed = true
+                    }
+                    
                     completion?(true, "Restore Completed!")
-                }
-                if nonConsumables.isEmpty {
+                }else{
                     completion?(false, "Nothing to restore.")
                 }
             case .error(let error):

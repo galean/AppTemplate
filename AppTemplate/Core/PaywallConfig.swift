@@ -8,13 +8,27 @@
 import Foundation
 import CoreIntegrations
 
-enum AppPurchaseGroup: String, CorePurchaseGroup {
-    case Pro
+public enum ProPurchaseGroup: String, CorePurchaseGroup {
+  case Pro
 }
 
-enum AppPurchaseIdentifier: String, CorePurchaseIdentifier {
-    var purchaseGroup: any CorePurchaseGroup {
-        return AppPurchaseGroup.Pro
+
+public enum AppPurchaseIdentifier: String, CorePurchaseIdentifier {
+    public var purchaseGroup: any CorePurchaseGroup {
+        //by default return main subscription group - Pro
+        return ProPurchaseGroup.Pro
+        
+        //return different group for each subscription
+        /*
+        switch self {
+        case .annual_34_99:
+            return ProPurchaseGroup.Pro
+        case .weekly_9_99:
+            return ProPurchaseGroup.TestPro
+        case .lifetime_34_99:
+            return ProPurchaseGroup.PremiumPro
+        }
+         */
     }
     
 //    var purchaseGroup: any CoreIntegrations.CorePurchaseGroup {
@@ -33,7 +47,7 @@ enum AppPurchaseIdentifier: String, CorePurchaseIdentifier {
 //        }
 //         */
 //    }
-    var id: String { return rawValue }
+    public var id: String { return rawValue }
     
     case annual_34_99 = "annual.34.99"
     case weekly_9_99 = "week.9.99"

@@ -28,8 +28,16 @@ extension AppCoreManager: CoreManagerDelegate {
             //set internal values for ipat
         }
         print("coreConfigurationFinished \(result)")
+        
+        //add verifyPremium here too!
+        //AppState.shared.verifyPremiumOnStart()
+        
         configurationResult = result
         configurationFinished = true
         configurationFinishCompletion?()
+    }
+    
+    func coreConfigurationUpdated(newResult: CoreManagerResult) {
+        configurationResult = newResult
     }
 }

@@ -46,16 +46,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        Task {
-            let result = await CoreManager.shared.verifyPremium()
-            switch result {
-            case .premium(let purchase):
-                print("UserDefaults.standard.isSubscribed = true")
-            case .notPremium:
-                print("UserDefaults.standard.isSubscribed = false")
+        if AppCoreManager.shared.configurationFinished {
+            Task {
+                let result = await CoreManager.shared.verifyPremium()
+                switch result {
+                case .premium(let purchase):
+                    print("UserDefaults.standard.isSubscribed = true")
+                case .notPremium:
+                    print("UserDefaults.standard.isSubscribed = false")
+                }
             }
+            //or PurchaseViewModel.shared.verifyPremium()
         }
-        //or PurchaseViewModel.shared.verifyPremium()
     }
     
 }
