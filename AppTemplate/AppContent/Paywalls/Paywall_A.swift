@@ -31,7 +31,7 @@ struct Paywall_A: View, PaywallViewProtocol {
             Text("Hello, Paywall_A!")
       
             ForEach(purchaseVM.purchases, id: \.identifier){ purchase in
-                Text("Subscribe for: \(purchase.localisedPrice)/\(purchase.periodString)")
+                Text("Subscribe for: \(purchase.localizedPrice)/\(purchase.periodString)")
             }
             
             Spacer()
