@@ -45,6 +45,32 @@ class PurchaseViewModel: ObservableObject {
         }
     }
     
+    func getPromoOffer(callback: (PromoOffer)->Void) {
+        //make a call to the backend and get response with data below
+        //PromoOffer(offerID: <#T##String#>, keyID: <#T##String#>, nonce: <#T##UUID#>, signature: <#T##Data#>, timestamp: <#T##Int#>)
+        //pass PromoOffer to purchase(purchase: Purchase, promoOffer: PromoOffer function
+    }
+    
+    func purchase(purchase: Purchase, promoOffer: PromoOffer, source: String, completion: ( (Bool, String) -> Void)? = nil) {
+        Task {
+            let result = await CoreManager.shared.purchase(purchase, promoOffer: promoOffer)
+            switch result {
+            case .success(details: let details):
+//                UserDefaults.standard.isSubscribed = true
+//                AppAnalyticsUserProperties.subscription.identify(parameter: "true")
+                completion?(true, "Success")
+            case .userCancelled:
+                completion?(false, "User cancelled payment")
+            case .pending:
+                completion?(false, "Payment pending")
+            case .unknown:
+                completion?(false, "Unknown reason")
+            case .error(let error):
+                completion?(false, error)
+            }
+        }
+    }
+    
     func restore(completion: ( (Bool, String) -> Void)? = nil) {
         Task {
             let result = await CoreManager.shared.restore()

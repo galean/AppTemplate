@@ -9,26 +9,28 @@ import Foundation
 import CoreIntegrations
 
 public enum ProPurchaseGroup: String, CorePurchaseGroup {
-  case Pro
+    case Pro
+    case WeeklyGroup
+    case LifetimeGroup
 }
 
 
 public enum AppPurchaseIdentifier: String, CorePurchaseIdentifier {
     public var purchaseGroup: any CorePurchaseGroup {
         //by default return main subscription group - Pro
-        return ProPurchaseGroup.Pro
+//        return ProPurchaseGroup.Pro
         
         //return different group for each subscription
-        /*
+        
         switch self {
         case .annual_34_99:
             return ProPurchaseGroup.Pro
         case .weekly_9_99:
-            return ProPurchaseGroup.TestPro
+            return ProPurchaseGroup.WeeklyGroup
         case .lifetime_34_99:
-            return ProPurchaseGroup.PremiumPro
+            return ProPurchaseGroup.LifetimeGroup
         }
-         */
+         
     }
     
 //    var purchaseGroup: any CoreIntegrations.CorePurchaseGroup {
