@@ -74,7 +74,8 @@ class Router: NSObject, RouterProtocol {
     }
 
     func pop(_ isAnimated: Bool) {
-        self.navigationController.popViewController(animated: isAnimated)
+        guard let viewController = navigationController.popViewController(animated: isAnimated) else { return }
+        executeClosure(viewController)
     }
 
     func popToRoot(_ isAnimated: Bool) {
