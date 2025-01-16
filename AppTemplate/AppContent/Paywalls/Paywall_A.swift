@@ -11,7 +11,7 @@ import CoreIntegrations
 struct Paywall_A: View, PaywallViewProtocol {
    
     @StateObject var purchaseVM = PurchaseViewModel()
-    @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var coordinator: DefaultNavigationCoordinator
     
     let paywallConfig:PaywallConfig = .ct_vap_1
     let screenSource: String
@@ -20,8 +20,7 @@ struct Paywall_A: View, PaywallViewProtocol {
     var body: some View {
         VStack {
             Button(action: {
-                dismiss()
-                closeResult?(.close)
+                dismiss(.close)
             }) {
                 Text("Close")
             }
@@ -37,12 +36,12 @@ struct Paywall_A: View, PaywallViewProtocol {
             Spacer()
             
             Button(action: {
-                dismiss()
-                closeResult?(.purchase)
+                dismiss(.purchase)
             }) {
                 Text("Subscribe")
             }
         }
+        .toolbar(.hidden)
         .onAppear {
             AppAnalyticsEvents.subscription_shown.log(parameters: ["id":paywallConfig.id])
             
@@ -71,6 +70,16 @@ struct Paywall_A: View, PaywallViewProtocol {
                 //show success
             }
         }
+    }
+    
+    private func dismiss(_ reason: PaywallCloseResult) {
+        if coordinator.presentation == .push {
+            coordinator.push(.content_view)
+        }else{
+            coordinator.dismiss()
+        }
+        
+        closeResult?(reason)
     }
 }
 

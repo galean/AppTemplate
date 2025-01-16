@@ -11,12 +11,12 @@ import CoreIntegrations
 
 class AppSettings: CoreSettingsProtocol {
     // MARK: - Properties
-    var appID: String = "" // Should be given in a task by PM or taken from AppStoreConnect
-    var subscriptionsSecret = "" // Should be given in a task by PM or taken from AppStoreConnect
-    var attributionServerSecret = "" // Should be given in a task by PM
-    var amplitudeSecret: String = "" // Should be given in a task by PM
-    var appsFlyerKey: String = "" // Should be given in a task by PM
-    var revenuecatApiKey: String = "" // Should be given in a task by PM
+    var appID: String = "0x000000018041b7c4" // Should be given in a task by PM or taken from AppStoreConnect
+    var subscriptionsSecret = "0x000000018041b7c4" // Should be given in a task by PM or taken from AppStoreConnect
+    var attributionServerSecret = "0x000000018041b7c4" // Should be given in a task by PM
+    var amplitudeSecret: String = "0x000000018041b7c4" // Should be given in a task by PM
+    var appsFlyerKey: String = "0x000000018041b7c4" // Should be given in a task by PM
+    var revenuecatApiKey: String = "0x000000018041b7c4" // Should be given in a task by PM
 
 //    var termsURL: URL = URL(string: "")! // Should be given in a task by PM
 //    var privacyURL: URL = URL(string: "")! // Should be given in a task by PM

@@ -118,6 +118,7 @@ class Paywall_UIKit: UIViewController, PaywallViewProtocol {
             
         }
     }
+    
 }
 
 struct Paywall_UIKitRepresentable: UIViewControllerRepresentable {

@@ -23,6 +23,10 @@ class AppCoreManager {
 }
 
 extension AppCoreManager: CoreManagerDelegate {
+    func coreConfiguration(handleDeeplinkError error: any Error) {
+        
+    }
+    
     func coreConfigurationFinished(result: CoreManagerResult) {
         if result.userSource == .ipat {
             //set internal values for ipat

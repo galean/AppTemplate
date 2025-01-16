@@ -11,7 +11,7 @@ import CoreIntegrations
 struct Paywall_B: View, PaywallViewProtocol {
     
     @StateObject var purchaseVM = PurchaseViewModel()
-    @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var coordinator: DefaultNavigationCoordinator
     @State var purchases: [Purchase] = []
     
     let paywallConfig: PaywallConfig = .ct_vap_2
@@ -44,6 +44,7 @@ struct Paywall_B: View, PaywallViewProtocol {
                 Text("Subscribe")
             }
         }
+        .toolbar(.hidden)
         .onAppear {
             AppAnalyticsEvents.subscription_shown.log(parameters: ["id":paywallConfig.id])
             
@@ -72,6 +73,15 @@ struct Paywall_B: View, PaywallViewProtocol {
             }
         }
     }
+    
+    private func dismiss() {
+        if coordinator.presentation == .push {
+            coordinator.push(.content_view)
+        }else{
+            coordinator.dismiss()
+        }
+    }
+    
 }
 
 #Preview {

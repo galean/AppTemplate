@@ -5,7 +5,7 @@
 //  Created by Anatolii Kanarskyi on 14/2/24.
 //
 
-import Foundation
+import SwiftUI
 import CoreIntegrations
 
 @MainActor
@@ -27,7 +27,7 @@ class PurchaseViewModel: ObservableObject {
     
     func purchase(purchase: Purchase, source: String, completion: ( (Bool, String) -> Void)? = nil) {
         Task {
-            let result = await CoreManager.shared.purchase(purchase)
+            let result = await CoreManager.shared.purchase(purchase, activeController: UIApplication.topMostViewController())
             switch result {
             case .success(details: let details):
 //                UserDefaults.standard.isSubscribed = true
